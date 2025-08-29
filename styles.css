@@ -373,7 +373,6 @@ body {
     max-height: 70px;
     object-fit: contain;
     margin-bottom: 0.8rem; /* space for name */
-    filter: grayscale(100%);
     transition: filter 0.3s;
 }
 
@@ -386,10 +385,6 @@ body {
 .sponsor-card:hover {
     transform: scale(1.05);
     box-shadow: 0 0 15px rgba(59, 130, 246, 0.4);
-}
-
-.sponsor-card:hover img {
-    filter: grayscale(0%);
 }
 
 .sponsor-card img {
