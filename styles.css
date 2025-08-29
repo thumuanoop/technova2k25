@@ -40,11 +40,35 @@ body {
     padding: 1rem 0;
 }
 
+/* Ensure nav-links are visible on small screens */
 .nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+
+.nav-links {
+    display: flex;
+    gap: 1rem;
+}
+
+/* Fix for small screens */
+@media (max-width: 768px) {
+    .nav-links {
+        flex-wrap: wrap;       /* Allow wrapping instead of hiding */
+        justify-content: flex-end;
+    }
+
+    .nav-links button {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.7rem;
+    }
+
+    .home-button {
+        display: inline-block !important; /* Force visibility */
+    }
+}
+
 
 .logo {
     display: flex;
