@@ -399,6 +399,25 @@ body {
     filter: grayscale(100%);
     transition: filter 0.3s;
 }
+/* Sponsor Tiers */
+.sponsor-tier {
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.sponsor-tier-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: var(--foreground);
+}
+
+/* Highlight Main Sponsor */
+.sponsor-card.highlight {
+    border: 2px solid var(--primary);
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
+    transform: scale(1.05);
+}
 
 /* Section Styles */
 .section {
