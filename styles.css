@@ -418,6 +418,33 @@ body {
     box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
     transform: scale(1.05);
 }
+/* Row for main + co sponsor */
+.sponsor-row {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.sponsor-row .sponsor-card {
+    flex: 0 1 250px; /* smaller width */
+}
+
+/* Highlight Main Sponsor */
+.sponsor-card.highlight {
+    border: 2px solid var(--primary);
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.4);
+}
+
+/* Small label under sponsor name */
+.tier-label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--muted);
+    margin-top: 0.2rem;
+}
+
 
 /* Section Styles */
 .section {
