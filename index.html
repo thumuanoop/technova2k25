@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechNova 2025 - Innovation Unleashed</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Main Page -->
+    <div id="main-page">
+        <!-- Header -->
+        <header class="header">
+            <nav class="nav container">
+                <div class="logo">
+                    <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect width="16" height="10" x="2" y="3" rx="2" ry="2"/>
+                        <path d="m7 11 5-5 5 5"/>
+                        <path d="m7 17 5-5 5 5"/>
+                    </svg>
+                    <h1>TechNova <span class="accent">2025</span></h1>
+                </div>
+                <div class="nav-links">
+                    <button onclick="scrollToSection('schedule')">Schedule</button>
+                    <button onclick="scrollToSection('register')">Register</button>
+                    <button onclick="scrollToSection('venue')">Venue</button>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-bg"></div>
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <div class="date-badge">
+                            <i class="fas fa-calendar" style="margin-right: 0.5rem;"></i>
+                            September 19-20, 2025
+                        </div>
+                        <h1 class="hero-title">TechNova</h1>
+                        <p class="hero-subtitle">Innovation Unleashed</p>
+                        <p class="hero-description">
+                            Join us for 2 days of innovation, coding, and collaboration. Experience workshops, hackathons, and competitions that will challenge your skills and ignite your creativity.
+                        </p>
+                        <div class="hero-buttons">
+                            <button class="btn btn-primary" onclick="scrollToSection('register')">
+                                <i class="fas fa-rocket" style="margin-right: 0.5rem;"></i>
+                                Register Now
+                            </button>
+                            <button class="btn btn-secondary" onclick="showThemes()">
+                                <i class="fas fa-lightbulb" style="margin-right: 0.5rem;"></i>
+                                Hackathon Themes
+                            </button>
+                        </div>
+                    </div>
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-users" style="font-size: 3rem;"></i>
+                            </div>
+                            <h3 class="feature-title">Team Building</h3>
+                            <p class="feature-description">Form teams of 1-4 members and collaborate on innovative solutions.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-trophy" style="font-size: 3rem;"></i>
+                            </div>
+                            <h3 class="feature-title">Competitions</h3>
+                            <p class="feature-description">Participate in hackathons and coding competitions with exciting prizes.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-graduation-cap" style="font-size: 3rem;"></i>
+                            </div>
+                            <h3 class="feature-title">Learning Experience</h3>
+                            <p class="feature-description">Attend workshops, learn new technologies, and enhance your skills through hands-on experience.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Schedule Section -->
+        <section id="schedule" class="section section-alt">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Event Schedule</h2>
+                    <p class="section-description">Two days packed with workshops, competitions, and innovation.</p>
+                </div>
+                
+                <div class="timeline">
+                    <div class="day">
+                        <div class="day-header">
+                            <div class="day-number">1</div>
+                            <h3 class="day-title">Day 1 - September 19, 2025</h3>
+                        </div>
+                        <div class="timeline-cards">
+                            <div class="timeline-card">
+                                <div class="timeline-card-header">
+                                    <i class="fas fa-chalkboard-teacher timeline-icon"></i>
+                                    <h4 class="timeline-card-title">Workshop Sessions</h4>
+                                </div>
+                                <div class="timeline-details">
+                                    <div class="timeline-detail">
+                                        <i class="fas fa-clock"></i>
+                                        <span>9:00 AM - 5:00 PM</span>
+                                    </div>
+                                    <div class="timeline-detail">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        <span>ANITS Campus</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="timeline-card">
+                                <div class="timeline-card-header">
+                                    <i class="fas fa-code timeline-icon"></i>
+                                    <h4 class="timeline-card-title">Hackathon Begins</h4>
+                                </div>
+                                <div class="timeline-details">
+                                    <div class="timeline-detail">
+                                        <i class="fas fa-clock"></i>
+                                        <span>6:00 PM - Overnight</span>
+                                    </div>
+                                    <div class="timeline-detail">
+                                        <i class="fas fa-hourglass-half"></i>
+                                        <span>12-hour coding marathon</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="day">
+                        <div class="day-header">
+                            <div class="day-number">2</div>
+                            <h3 class="day-title">Day 2 - September 20, 2025</h3>
+                        </div>
+                        <div class="timeline-cards three-cols">
+                            <div class="timeline-card">
+                                <div class="timeline-card-header">
+                                    <i class="fas fa-flag timeline-icon"></i>
+                                    <h4 class="timeline-card-title">Hackathon Ends</h4>
+                                </div>
+                                <div class="timeline-details">
+                                    <div class="timeline-detail">
+                                        <i class="fas fa-clock"></i>
+                                        <span>6:00 AM</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="timeline-card">
+                                <div class="timeline-card-header">
+                                    <i class="fas fa-laptop timeline-icon"></i>
+                                    <h4 class="timeline-card-title">Coding Competition</h4>
+                                </div>
+                                <div class="timeline-details">
+                                    <div class="timeline-detail">
+                                        <i class="fas fa-clock"></i>
+                                        <span>9:00 AM - 1:00 PM</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="timeline-card">
+                                <div class="timeline-card-header">
+                                    <i class="fas fa-medal timeline-icon"></i>
+                                    <h4 class="timeline-card-title">Valedictory</h4>
+                                </div>
+                                <div class="timeline-details">
+                                    <div class="timeline-detail">
+                                        <i class="fas fa-clock"></i>
+                                        <span>2:00 PM - 4:00 PM</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Registration Section -->
+        <section id="register" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Registration</h2>
+                    <p class="section-description">Choose your participation type and team size to get started.</p>
+                </div>
+
+                <div class="registration-container">
+                    <!-- Event Type Selection -->
+                    <div class="event-selector">
+                        <h3>What do you want to participate in?</h3>
+                        <div class="event-options">
+                            <div class="event-option" onclick="selectEvent('hackathon')" id="event-hackathon">
+                                <div class="theme-icon"><i class="fas fa-code" style="font-size: 2rem;"></i></div>
+                                <h4>Hackathon Only</h4>
+                                <p>12-hour coding marathon</p>
+                            </div>
+                            <div class="event-option" onclick="selectEvent('coding')" id="event-coding">
+                                <div class="theme-icon"><i class="fas fa-laptop" style="font-size: 2rem;"></i></div>
+                                <h4>Coding Competition</h4>
+                                <p>4-hour coding challenge</p>
+                            </div>
+                            <div class="event-option" onclick="selectEvent('combo')" id="event-combo">
+                                <div class="theme-icon"><i class="fas fa-trophy" style="font-size: 2rem;"></i></div>
+                                <h4>Combo Package</h4>
+                                <p>Hackathon + Coding Competition</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Team Size Selection -->
+                    <div class="team-selector">
+                        <h3>Select Team Size</h3>
+                        <div class="team-options">
+                            <div class="team-option" onclick="selectTeamSize(1)" id="team-1">
+                                <div class="team-icon"><i class="fas fa-user" style="font-size: 2rem;"></i></div>
+                                <div class="team-label">1 Member</div>
+                                <div class="team-subtitle">Solo</div>
+                            </div>
+                            <div class="team-option" onclick="selectTeamSize(2)" id="team-2">
+                                <div class="team-icon"><i class="fas fa-user-friends" style="font-size: 2rem;"></i></div>
+                                <div class="team-label">2 Members</div>
+                                <div class="team-subtitle">Duo</div>
+                            </div>
+                            <div class="team-option" onclick="selectTeamSize(3)" id="team-3">
+                                <div class="team-icon"><i class="fas fa-users" style="font-size: 2rem;"></i></div>
+                                <div class="team-label">3 Members</div>
+                                <div class="team-subtitle">Trio</div>
+                            </div>
+                            <div class="team-option" onclick="selectTeamSize(4)" id="team-4">
+                                <div class="team-icon"><i class="fas fa-user-friends" style="font-size: 2rem;"></i></div>
+                                <div class="team-label">4 Members</div>
+                                <div class="team-subtitle">Squad</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pricing Display -->
+                    <div id="pricing-display" class="pricing-display hidden">
+                        <div class="pricing-amount" id="price-amount">₹0</div>
+                        <div class="pricing-details" id="price-details"></div>
+                        <button class="btn btn-primary" onclick="redirectToForm()" id="register-button">
+                            <i class="fas fa-external-link-alt" style="margin-right: 0.5rem;"></i>
+                            Complete Registration
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Venue Section -->
+        <section id="venue" class="section section-alt">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Venue</h2>
+                    <p class="section-description">Join us at the premier technology institute in Visakhapatnam.</p>
+                </div>
+
+                <div class="venue-grid">
+                    <div class="venue-info">
+                        <div class="venue-detail">
+                            <i class="fas fa-university"></i>
+                            <div class="venue-detail-content">
+                                <h4>Anil Neerukonda Institute of Technology & Sciences</h4>
+                                <p>State-of-the-art campus with modern facilities for technical events and competitions.</p>
+                            </div>
+                        </div>
+                        <div class="venue-detail">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div class="venue-detail-content">
+                                <h4>Location</h4>
+                                <p>Visakhapatnam, Andhra Pradesh, India</p>
+                            </div>
+                        </div>
+                        <div class="venue-detail">
+                            <i class="fas fa-car"></i>
+                            <div class="venue-detail-content">
+                                <h4>Transportation</h4>
+                                <p>Easily accessible by road with ample parking facilities available.</p>
+                            </div>
+                        </div>
+                        <div class="venue-detail">
+                            <i class="fas fa-wifi"></i>
+                            <div class="venue-detail-content">
+                                <h4>Facilities</h4>
+                                <p>High-speed internet, power backup, and modern computer labs.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="venue-image">
+                        <img src="https://images.unsplash.com/photo-1498496294664-d9372eb521f3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" alt="Modern technology institute campus" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-brand">
+                        <div class="logo">
+                            <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect width="16" height="10" x="2" y="3" rx="2" ry="2"/>
+                                <path d="m7 11 5-5 5 5"/>
+                                <path d="m7 17 5-5 5 5"/>
+                            </svg>
+                            <span>TechNova 2025</span>
+                        </div>
+                        <p>Innovation unleashed through technology and collaboration.</p>
+                    </div>
+
+                    <div class="footer-section">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><button onclick="scrollToSection('schedule')">Schedule</button></li>
+                            <li><button onclick="scrollToSection('register')">Register</button></li>
+                            <li><button onclick="scrollToSection('venue')">Venue</button></li>
+                            <li><button onclick="showThemes()">Themes</button></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-section">
+                        <h4>Events</h4>
+                        <ul>
+                            <li>Workshops</li>
+                            <li>Hackathon</li>
+                            <li>Coding Competition</li>
+                            <li>Valedictory</li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-section">
+                        <h4>Contact</h4>
+                        <ul>
+                            <li><i class="fas fa-envelope"></i>&nbsp; info@technova2025.com</li>
+                            <li><i class="fas fa-phone"></i>&nbsp; +91 XXXXX XXXXX</li>
+                            <li><i class="fas fa-map-marker-alt"></i>&nbsp; ANITS, Visakhapatnam</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="footer-copyright">
+                    <p>&copy; 2025 TechNova. All rights reserved. | Organized by ANITS</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Themes Page -->
+    <div id="themes-page" class="hidden">
+        <!-- Header -->
+        <header class="header">
+            <nav class="nav container">
+                <div class="logo">
+                    <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect width="16" height="10" x="2" y="3" rx="2" ry="2"/>
+                        <path d="m7 11 5-5 5 5"/>
+                        <path d="m7 17 5-5 5 5"/>
+                    </svg>
+                    <h1>TechNova <span class="accent">2025</span></h1>
+                </div>
+                <div class="nav-links">
+                    <button class="home-button" onclick="showMain()">Home</button>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Hackathon Themes Section -->
+        <section id="themes" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Hackathon Themes</h2>
+                    <p class="section-description">Choose your challenge and build with purpose.</p>
+                </div>
+
+                <div class="themes-grid">
+                    <div class="theme-card">
+                        <div class="theme-icon"><i class="fas fa-globe-americas"></i></div>
+                        <h3 class="theme-title">Tourism</h3>
+                        <p class="theme-description">Create innovative digital experiences to promote travel, local businesses, and cultural heritage.</p>
+                    </div>
+
+                    <div class="theme-card">
+                        <div class="theme-icon"><i class="fas fa-solar-panel"></i></div>
+                        <h3 class="theme-title">Renewable & Sustainable Energy</h3>
+                        <p class="theme-description">Design green technologies for solar, wind, and clean energy storage solutions.</p>
+                    </div>
+
+                    <div class="theme-card">
+                        <div class="theme-icon"><i class="fas fa-shield-alt"></i></div>
+                        <h3 class="theme-title">Blockchain & Cybersecurity</h3>
+                        <p class="theme-description">Build secure, decentralized applications to protect data and digital transactions.</p>
+                    </div>
+
+                    <div class="theme-card">
+                        <div class="theme-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                        <h3 class="theme-title">Smart Education</h3>
+                        <p class="theme-description">Enhance learning with AR/VR classrooms, AI tutors, and digital accessibility.</p>
+                    </div>
+
+                    <div class="theme-card">
+                        <div class="theme-icon"><i class="fas fa-first-aid"></i></div>
+                        <h3 class="theme-title">Disaster Management</h3>
+                        <p class="theme-description">Create early-warning systems, rescue coordination apps, and crisis response tools.</p>
+                    </div>
+
+                    <div class="theme-card">
+                        <div class="theme-icon"><i class="fas fa-gamepad"></i></div>
+                        <h3 class="theme-title">Games & Toys</h3>
+                        <p class="theme-description">Develop interactive, educational, and fun gaming solutions for all ages.</p>
+                    </div>
+
+                    <div class="theme-card">
+                        <div class="theme-icon"><i class="fas fa-lightbulb"></i></div>
+                        <h3 class="theme-title">Innovation</h3>
+                        <p class="theme-description">Disrupt industries with bold, out-of-the-box ideas that shape the future.</p>
+                    </div>
+
+                    <div class="theme-card">
+                        <div class="theme-icon"><i class="fas fa-dumbbell"></i></div>
+                        <h3 class="theme-title">Fitness & Sports</h3>
+                        <p class="theme-description">Build apps for tracking health, gamifying workouts, and enhancing athletic training.</p>
+                    </div>
+
+                    <div class="theme-card">
+                        <div class="theme-icon"><i class="fas fa-landmark"></i></div>
+                        <h3 class="theme-title">Heritage & Culture</h3>
+                        <p class="theme-description">Digitally preserve art, history, and culture with immersive tech experiences.</p>
+                    </div>
+
+                    <div class="theme-card">
+                        <div class="theme-icon"><i class="fas fa-heartbeat"></i></div>
+                        <h3 class="theme-title">Health Tech</h3>
+                        <p class="theme-description">Innovate in telemedicine, AI diagnostics, patient care, and wellness solutions.</p>
+                    </div>
+
+                    <div class="theme-card">
+                        <div class="theme-icon"><i class="fas fa-tractor"></i></div>
+                        <h3 class="theme-title">Agriculture, Food Tech & Rural Development</h3>
+                        <p class="theme-description">Improve farming with IoT, smart irrigation, and supply-chain innovations.</p>
+                    </div>
+
+                    <div class="theme-card">
+                        <div class="theme-icon"><i class="fas fa-truck"></i></div>
+                        <h3 class="theme-title">Transportation & Logistics</h3>
+                        <p class="theme-description">Design smart mobility systems, EV solutions, and AI-powered logistics.</p>
+                    </div>
+
+                    <div class="theme-card">
+                        <div class="theme-icon"><i class="fas fa-robot"></i></div>
+                        <h3 class="theme-title">Robotics & Drones</h3>
+                        <p class="theme-description">Create autonomous systems for industries, healthcare, and exploration.</p>
+                    </div>
+
+                    <div class="theme-card">
+                        <div class="theme-icon"><i class="fas fa-leaf"></i></div>
+                        <h3 class="theme-title">Clean & Green Technology</h3>
+                        <p class="theme-description">Build eco-friendly solutions to reduce pollution and promote sustainability.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-brand">
+                        <div class="logo">
+                            <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect width="16" height="10" x="2" y="3" rx="2" ry="2"/>
+                                <path d="m7 11 5-5 5 5"/>
+                                <path d="m7 17 5-5 5 5"/>
+                            </svg>
+                            <span>TechNova 2025</span>
+                        </div>
+                        <p>Innovation unleashed through technology and collaboration.</p>
+                    </div>
+
+                    <div class="footer-section">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><button onclick="showMain()">Home</button></li>
+                            <li><button onclick="showMain(); setTimeout(() => scrollToSection('schedule'), 100);">Schedule</button></li>
+                            <li><button onclick="showMain(); setTimeout(() => scrollToSection('register'), 100);">Register</button></li>
+                            <li><button onclick="showMain(); setTimeout(() => scrollToSection('venue'), 100);">Venue</button></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-section">
+                        <h4>Events</h4>
+                        <ul>
+                            <li>Workshops</li>
+                            <li>Hackathon</li>
+                            <li>Coding Competition</li>
+                            <li>Valedictory</li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-section">
+                        <h4>Contact</h4>
+                        <ul>
+                            <li><i class="fas fa-envelope"></i>&nbsp; info@technova2025.com</li>
+                            <li><i class="fas fa-phone"></i>&nbsp; +91 XXXXX XXXXX</li>
+                            <li><i class="fas fa-map-marker-alt"></i>&nbsp; ANITS, Visakhapatnam</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="footer-copyright">
+                    <p>&copy; 2025 TechNova. All rights reserved. | Organized by ANITS</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
