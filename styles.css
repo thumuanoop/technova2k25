@@ -346,6 +346,43 @@ body {
     color: var(--muted-foreground);
     font-size: 0.875rem;
 }
+/* Sponsors Section */
+.sponsors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 2rem;
+    align-items: center;
+    justify-items: center;
+}
+
+.sponsor-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    min-height: 100px;
+}
+
+.sponsor-card img {
+    max-width: 100%;
+    max-height: 80px;
+    object-fit: contain;
+    filter: grayscale(100%);
+    transition: filter 0.3s;
+}
+
+.sponsor-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.4);
+}
+
+.sponsor-card:hover img {
+    filter: grayscale(0%);
+}
 
 /* Section Styles */
 .section {
