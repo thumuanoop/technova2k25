@@ -444,6 +444,47 @@ body {
     color: var(--muted);
     margin-top: 0.2rem;
 }
+/* Row for main + co sponsor */
+.sponsor-row {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.sponsor-block {
+    text-align: center;
+}
+
+.sponsor-block .sponsor-tier-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--foreground);
+}
+
+/* Make boxes smaller */
+.sponsor-row .sponsor-card {
+    flex: 0 1 220px;
+}
+
+/* Highlight Main Sponsor */
+.sponsor-card.highlight {
+    border: 2px solid var(--primary);
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.4);
+}
+
+/* Other sponsors grid (only 2) */
+.sponsors-grid {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+.sponsors-grid .sponsor-card {
+    flex: 0 1 200px;
+}
 
 
 /* Section Styles */
