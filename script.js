@@ -30,6 +30,11 @@ let selectedEvent = null;
 let selectedTeamSize = null;
 
 // Utility functions
+function toggleMenu() {
+    const navLinks = document.querySelector('.nav-links');
+    navLinks.classList.toggle('active');
+}
+
 function scrollToSection(sectionId) {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -122,24 +127,4 @@ function redirectToForm() {
     if (selectedEvent && formUrls[selectedEvent]) {
         window.open(formUrls[selectedEvent], '_blank');
     }
-}
-document.querySelector('.menu-toggle').addEventListener('click', () => {
-  document.querySelector('.nav-links').classList.toggle('active');
-});
-function toggleMenu() {
-    const navLinks = document.querySelector('.nav-links');
-    navLinks.classList.toggle('active');
-}
-function scrollToSection(sectionId) {
-    document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
-}
-
-function showThemes() {
-    document.getElementById('main-page').classList.add('hidden');
-    document.getElementById('themes-page').classList.remove('hidden');
-}
-
-function showMain() {
-    document.getElementById('themes-page').classList.add('hidden');
-    document.getElementById('main-page').classList.remove('hidden');
 }
