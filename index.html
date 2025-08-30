@@ -11,29 +11,30 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Header (Unified across pages) -->
+    <header class="header">
+        <nav class="nav container">
+            <div class="logo">
+                <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect width="16" height="10" x="2" y="3" rx="2" ry="2"/>
+                    <path d="m7 11 5-5 5 5"/>
+                    <path d="m7 17 5-5 5 5"/>
+                </svg>
+                <h1>TechNova <span class="accent">2025</span></h1>
+            </div>
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="nav-links">
+                <button onclick="showMain(); scrollToSection('schedule')">Schedule</button>
+                <button onclick="showMain(); scrollToSection('register')">Register</button>
+                <button class="home-button" onclick="showMain()">Back to Home</button>
+            </div>
+        </nav>
+    </header>
+
     <!-- Main Page -->
     <div id="main-page">
-        <!-- Header --> 
-        <header class="header"> 
-            <nav class="nav container">
-                <div class="logo"> 
-                    <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"> 
-                        <rect width="16" height="10" x="2" y="3" rx="2" ry="2"/> 
-                        <path d="m7 11 5-5 5 5"/> 
-                        <path d="m7 17 5-5 5 5"/> 
-                    </svg> 
-                    <h1>TechNova <span class="accent">2025</span></h1> 
-                </div>
-                <div class="menu-toggle" onclick="toggleMenu()">
-                    <i class="fas fa-bars"></i>
-                </div>
-                <div class="nav-links"> 
-                    <button onclick="scrollToSection('schedule')">Schedule</button> 
-                    <button onclick="scrollToSection('register')">Register</button> 
-                </div> 
-            </nav> 
-        </header>
-
         <!-- Hero Section -->
         <section class="hero">
             <div class="hero-bg"></div>
@@ -58,7 +59,6 @@
                                 <i class="fas fa-lightbulb" style="margin-right: 0.5rem;"></i>
                                 Hackathon Themes
                             </button>
-                             
                         </div>
                     </div>
                     <div class="features-grid">
@@ -67,7 +67,7 @@
                                 <i class="fas fa-users" style="font-size: 3rem;"></i>
                             </div>
                             <h3 class="feature-title">Tech Talk</h3>
-                            <p class="feature-description"> electrifying days filled with tech talks, From sunrise to starlight, every moment is designed to inspire, challenge, and connect.</p>
+                            <p class="feature-description">Electrifying days filled with tech talks, from sunrise to starlight, every moment is designed to inspire, challenge, and connect.</p>
                         </div>
                         <div class="feature-card">
                             <div class="feature-icon">
@@ -81,7 +81,7 @@
                                 <i class="fas fa-graduation-cap" style="font-size: 3rem;"></i>
                             </div>
                             <h3 class="feature-title">Coding Quest</h3>
-                            <p class="feature-description">Showcase your coding skills in thrilling challenge. Let out the Coding Expert in you come out and Amaze everyone</p>
+                            <p class="feature-description">Showcase your coding skills in thrilling challenge. Let out the coding expert in you come out and amaze everyone.</p>
                         </div>
                     </div>
                 </div>
@@ -93,7 +93,7 @@
             <div class="container">
                 <div class="section-header">
                     <h2 class="section-title">Event Schedule</h2>
-                    <p class="section-description">Two days packed with Tech talk, competitions, and innovatio.</p>
+                    <p class="section-description">Two days packed with Tech talk, competitions, and innovation.</p>
                 </div>
                 
                 <div class="timeline">
@@ -362,10 +362,9 @@
                     <div class="footer-section">
                         <h4>Quick Links</h4>
                         <ul>
-                            <li><button onclick="scrollToSection('schedule')">Schedule</button></li>
-                            <li><button onclick="scrollToSection('register')">Register</button></li>
-                            <li><button onclick="scrollToSection('venue')">Venue</button></li>
-                            <li><button onclick="showThemes()">Themes</button></li>
+                            <li><button onclick="showMain(); setTimeout(() => scrollToSection('schedule'), 100);">Schedule</button></li>
+                            <li><button onclick="showMain(); setTimeout(() => scrollToSection('register'), 100);">Register</button></li>
+                            <li><button onclick="showMain(); setTimeout(() => scrollToSection('venue'), 100);">Venue</button></li>
                         </ul>
                     </div>
 
@@ -398,26 +397,6 @@
 
     <!-- Themes Page -->
     <div id="themes-page" class="hidden">
-        <!-- Header -->
-        <header class="header">
-            <nav class="nav container">
-                <div class="logo">
-                    <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <rect width="16" height="10" x="2" y="3" rx="2" ry="2"/>
-                        <path d="m7 11 5-5 5 5"/>
-                        <path d="m7 17 5-5 5 5"/>
-                    </svg>
-                    <h1>TechNova <span class="accent">2025</span></h1>
-                </div>
-                <div class="menu-toggle" onclick="toggleMenu()">
-                    <i class="fas fa-bars"></i>
-                </div>
-                <div class="nav-links">
-                    <button class="home-button" onclick="showMain()">Home</button>
-                </div>
-            </nav>
-        </header>
-
         <!-- Hackathon Themes Section -->
         <section id="themes" class="section">
             <div class="container">
