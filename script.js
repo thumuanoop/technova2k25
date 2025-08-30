@@ -35,6 +35,25 @@ function toggleMenu() {
     navLinks.classList.toggle('active');
 }
 
+// Close menu when clicking outside
+document.addEventListener('click', function(event) {
+    const navLinks = document.querySelector('.nav-links');
+    const menuToggle = document.querySelector('.menu-toggle');
+    const isClickInsideMenu = navLinks.contains(event.target) || menuToggle.contains(event.target);
+    
+    if (!isClickInsideMenu && navLinks.classList.contains('active')) {
+        navLinks.classList.remove('active');
+    }
+});
+
+// Close menu when clicking a navigation link
+document.querySelectorAll('.nav-links button').forEach(button => {
+    button.addEventListener('click', () => {
+        const navLinks = document.querySelector('.nav-links');
+        navLinks.classList.remove('active');
+    });
+});
+
 function scrollToSection(sectionId) {
     const element = document.getElementById(sectionId);
     if (element) {
