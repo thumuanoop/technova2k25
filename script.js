@@ -130,3 +130,16 @@ function toggleMenu() {
     const navLinks = document.querySelector('.nav-links');
     navLinks.classList.toggle('active');
 }
+function scrollToSection(sectionId) {
+    document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+}
+
+function showThemes() {
+    document.getElementById('main-page').classList.add('hidden');
+    document.getElementById('themes-page').classList.remove('hidden');
+}
+
+function showMain() {
+    document.getElementById('themes-page').classList.add('hidden');
+    document.getElementById('main-page').classList.remove('hidden');
+}
