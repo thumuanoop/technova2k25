@@ -38,6 +38,8 @@ body {
 .header {
     border-bottom: 1px solid var(--border);
     padding: 1rem 0;
+    position: relative;
+    z-index: 1000;
 }
 
 /* Navbar */
@@ -89,7 +91,7 @@ body {
         border-radius: var(--radius);
         padding: 1rem;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-        z-index: 1000;
+        z-index: 1001;
     }
 
     .nav-links.active {
