@@ -17,7 +17,22 @@
         <header class="header"> 
             <nav class="nav container">
                 <div class="logo"> 
-                    <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"> <rect width="16" height="10" x="2" y="3" rx="2" ry="2"/> <path d="m7 11 5-5 5 5"/> <path d="m7 17 5-5 5 5"/> </svg> <h1>TechNova <span class="accent">2025</span></h1> </div> <div class="nav-links"> <button onclick="scrollToSection('schedule')">Schedule</button> <button onclick="scrollToSection('register')">Register</button> </div> </nav> </header>
+                    <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"> 
+                        <rect width="16" height="10" x="2" y="3" rx="2" ry="2"/> 
+                        <path d="m7 11 5-5 5 5"/> 
+                        <path d="m7 17 5-5 5 5"/> 
+                    </svg> 
+                    <h1>TechNova <span class="accent">2025</span></h1> 
+                </div>
+                <div class="menu-toggle" onclick="toggleMenu()">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <div class="nav-links"> 
+                    <button onclick="scrollToSection('schedule')">Schedule</button> 
+                    <button onclick="scrollToSection('register')">Register</button> 
+                </div> 
+            </nav> 
+        </header>
 
         <!-- Hero Section -->
         <section class="hero">
@@ -32,7 +47,7 @@
                         <h1 class="hero-title">TechNova</h1>
                         <p class="hero-subtitle">Innovation Unleashed</p>
                         <p class="hero-description">
-                            Department of Computer Science and Data Science brings you TechNova a 2 day adrenaline-charged celebration of tech brilliance, bold ideas, and boundary-breaking creativity. Whether you're a code warrior, a design thinker, or a curious innovator, this is your playground.
+                            Department of Computer Science and Data Science brings you TechNova a 2 day adrenaline-charged celebration of tech brilliance, bold ideas, and boundary-breaking creativity. Whether you're a code warrior, a design thinker, or a curious innovator, this is your playground.
                         </p>
                         <div class="hero-buttons">
                             <button class="btn btn-primary" onclick="scrollToSection('register')">
@@ -51,21 +66,21 @@
                                 <i class="fas fa-users" style="font-size: 3rem;"></i>
                             </div>
                             <h3 class="feature-title">Tech Talk</h3>
-                            <p class="feature-description"> electrifying days filled with tech talks, competitive coding, and innovative showcases. From sunrise to starlight, every moment is designed to inspire, challenge, and connect..</p>
+                            <p class="feature-description"> electrifying days filled with tech talks, competitive coding, and innovative showcases. From sunrise to starlight, every moment is designed to inspire, challenge, and connect.</p>
                         </div>
                         <div class="feature-card">
                             <div class="feature-icon">
                                 <i class="fas fa-trophy" style="font-size: 3rem;"></i>
                             </div>
                             <h3 class="feature-title">Hackathon</h3>
-                            <p class="feature-description">Gather your crew or go solo and dive into a world of innovation. Whether you're flying solo or rolling deep with a squad of four, this is your chance to collaborate, create, and conquer.</p>
+                            <p class="feature-description">Gather your crew or go solo and dive into a world of innovation. Whether you're flying solo or rolling deep with a squad of four, this is your chance to collaborate, create, and conquer.</p>
                         </div>
                         <div class="feature-card">
                             <div class="feature-icon">
                                 <i class="fas fa-graduation-cap" style="font-size: 3rem;"></i>
                             </div>
                             <h3 class="feature-title">Coding Quest</h3>
-                            <p class="feature-description">Showcase your coding skills in thrilling challenge.Let out the Coding Expert in you come out and Amaze everyone</p>
+                            <p class="feature-description">Showcase your coding skills in thrilling challenge. Let out the Coding Expert in you come out and Amaze everyone</p>
                         </div>
                     </div>
                 </div>
@@ -115,7 +130,7 @@
                                     </div>
                                     <div class="timeline-detail">
                                         <i class="fas fa-hourglass-half"></i>
-                                        <span>12-hour coding marathon,</span>
+                                        <span>12-hour coding marathon</span>
                                     </div>
                                 </div>
                             </div>
@@ -240,56 +255,53 @@
                 </div>
             </div>
         </section>
-     <!-- Sponsors Section -->
-<section class="section section-alt" id="sponsors">
-  <div class="container">
-    <div class="section-header">
-      <h2 class="section-title">Our Sponsors</h2>
-      <p class="section-description">
-        A huge thank you to our amazing sponsors who make this hackathon possible.
-      </p>
-    </div>
 
-    <!-- Main + Co Sponsor Row -->
-    <div class="sponsor-tier">
-      <div class="sponsor-row">
-        <div class="sponsor-block">
-          <h3 class="sponsor-tier-title">Main Sponsor</h3>
-          <div class="sponsor-card highlight">
-            <img src="uniglobal.png" alt="Uni Global Logo">
-            <p class="sponsor-name">Uni Global</p>
-          </div>
-        </div>
-        <div class="sponsor-block">
-          <h3 class="sponsor-tier-title">Co-Sponsor</h3>
-          <div class="sponsor-card">
-            <img src="manuh.png" alt="Manuh technologies logo">
-            <p class="sponsor-name">Manuh Technologies</p>
-          </div>
-        </div>
-      </div>
-    </div>
+        <!-- Sponsors Section -->
+        <section class="section section-alt" id="sponsors">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Our Sponsors</h2>
+                    <p class="section-description">
+                        A huge thank you to our amazing sponsors who make this hackathon possible.
+                    </p>
+                </div>
 
-    <!-- Other Sponsors -->
-    <div class="sponsor-tier">
-      <h3 class="sponsor-tier-title">Other Sponsors</h3>
-      <div class="sponsors-grid">
-        <div class="sponsor-card">
-          <img src="netmaxin.png" alt="NetMaxin Logo">
-          <p class="sponsor-name">NetMaxin</p>
-        </div>
-        <div class="sponsor-card">
-          <img src="edumoon.jpg" alt="Edumoon logo">
-          <p class="sponsor-name">EduMoon</p>
-        </div>
-      </div>
-    </div>
+                <!-- Main + Co Sponsor Row -->
+                <div class="sponsor-tier">
+                    <div class="sponsor-row">
+                        <div class="sponsor-block">
+                            <h3 class="sponsor-tier-title">Main Sponsor</h3>
+                            <div class="sponsor-card highlight">
+                                <img src="uniglobal.png" alt="Uni Global Logo">
+                                <p class="sponsor-name">Uni Global</p>
+                            </div>
+                        </div>
+                        <div class="sponsor-block">
+                            <h3 class="sponsor-tier-title">Co-Sponsor</h3>
+                            <div class="sponsor-card">
+                                <img src="manuh.png" alt="Manuh technologies logo">
+                                <p class="sponsor-name">Manuh Technologies</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-  </div>
-</section>
-
-
-    
+                <!-- Other Sponsors -->
+                <div class="sponsor-tier">
+                    <h3 class="sponsor-tier-title">Other Sponsors</h3>
+                    <div class="sponsors-grid">
+                        <div class="sponsor-card">
+                            <img src="netmaxin.png" alt="NetMaxin Logo">
+                            <p class="sponsor-name">NetMaxin</p>
+                        </div>
+                        <div class="sponsor-card">
+                            <img src="edumoon.jpg" alt="Edumoon logo">
+                            <p class="sponsor-name">EduMoon</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <!-- Venue Section -->
         <section id="venue" class="section section-alt">
@@ -315,7 +327,6 @@
                                 <p>Visakhapatnam, Andhra Pradesh, India</p>
                             </div>
                         </div>
-                        
                         <div class="venue-detail">
                             <i class="fas fa-wifi"></i>
                             <div class="venue-detail-content">
@@ -397,7 +408,10 @@
                     </svg>
                     <h1>TechNova <span class="accent">2025</span></h1>
                 </div>
-               <div class="nav-links">
+                <div class="menu-toggle" onclick="toggleMenu()">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <div class="nav-links">
                     <button class="home-button" onclick="showMain()">Home</button>
                 </div>
             </nav>
@@ -417,79 +431,66 @@
                         <h3 class="theme-title">Tourism</h3>
                         <p class="theme-description">Create innovative digital experiences to promote travel, local businesses, and cultural heritage.</p>
                     </div>
-
                     <div class="theme-card">
                         <div class="theme-icon"><i class="fas fa-solar-panel"></i></div>
                         <h3 class="theme-title">Renewable & Sustainable Energy</h3>
                         <p class="theme-description">Design green technologies for solar, wind, and clean energy storage solutions.</p>
                     </div>
-
                     <div class="theme-card">
                         <div class="theme-icon"><i class="fas fa-shield-alt"></i></div>
                         <h3 class="theme-title">Blockchain & Cybersecurity</h3>
                         <p class="theme-description">Build secure, decentralized applications to protect data and digital transactions.</p>
                     </div>
-
                     <div class="theme-card">
                         <div class="theme-icon"><i class="fas fa-chalkboard-teacher"></i></div>
                         <h3 class="theme-title">Smart Education</h3>
                         <p class="theme-description">Enhance learning with AR/VR classrooms, AI tutors, and digital accessibility.</p>
                     </div>
-
                     <div class="theme-card">
                         <div class="theme-icon"><i class="fas fa-first-aid"></i></div>
                         <h3 class="theme-title">Disaster Management</h3>
                         <p class="theme-description">Create early-warning systems, rescue coordination apps, and crisis response tools.</p>
                     </div>
-
                     <div class="theme-card">
                         <div class="theme-icon"><i class="fas fa-gamepad"></i></div>
                         <h3 class="theme-title">Games & Toys</h3>
                         <p class="theme-description">Develop interactive, educational, and fun gaming solutions for all ages.</p>
                     </div>
-
                     <div class="theme-card">
                         <div class="theme-icon"><i class="fas fa-lightbulb"></i></div>
                         <h3 class="theme-title">Innovation</h3>
                         <p class="theme-description">Disrupt industries with bold, out-of-the-box ideas that shape the future.</p>
                     </div>
-
                     <div class="theme-card">
                         <div class="theme-icon"><i class="fas fa-dumbbell"></i></div>
                         <h3 class="theme-title">Fitness & Sports</h3>
                         <p class="theme-description">Build apps for tracking health, gamifying workouts, and enhancing athletic training.</p>
                     </div>
-
                     <div class="theme-card">
                         <div class="theme-icon"><i class="fas fa-landmark"></i></div>
                         <h3 class="theme-title">Heritage & Culture</h3>
                         <p class="theme-description">Digitally preserve art, history, and culture with immersive tech experiences.</p>
                     </div>
-
                     <div class="theme-card">
                         <div class="theme-icon"><i class="fas fa-heartbeat"></i></div>
                         <h3 class="theme-title">Health Tech</h3>
                         <p class="theme-description">Innovate in telemedicine, AI diagnostics, patient care, and wellness solutions.</p>
                     </div>
-
                     <div class="theme-card">
                         <div class="theme-icon"><i class="fas fa-tractor"></i></div>
                         <h3 class="theme-title">Agriculture, Food Tech & Rural Development</h3>
                         <p class="theme-description">Improve farming with IoT, smart irrigation, and supply-chain innovations.</p>
                     </div>
-
                     <div class="theme-card">
                         <div class="theme-icon"><i class="fas fa-truck"></i></div>
                         <h3 class="theme-title">Transportation & Logistics</h3>
                         <p class="theme-description">Design smart mobility systems, EV solutions, and AI-powered logistics.</p>
                     </div>
-
                     <div class="theme-card">
                         <div class="theme-icon"><i class="fas fa-robot"></i></div>
                         <h3 class="theme-title">Robotics & Drones</h3>
                         <p class="theme-description">Create autonomous systems for industries, healthcare, and exploration.</p>
                     </div>
-
                     <div class="theme-card">
                         <div class="theme-icon"><i class="fas fa-leaf"></i></div>
                         <h3 class="theme-title">Clean & Green Technology</h3>
@@ -518,7 +519,6 @@
                     <div class="footer-section">
                         <h4>Quick Links</h4>
                         <ul>
-                           
                             <li><button onclick="showMain(); setTimeout(() => scrollToSection('schedule'), 100);">Schedule</button></li>
                             <li><button onclick="showMain(); setTimeout(() => scrollToSection('register'), 100);">Register</button></li>
                             <li><button onclick="showMain(); setTimeout(() => scrollToSection('venue'), 100);">Venue</button></li>
