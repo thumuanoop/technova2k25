@@ -123,3 +123,6 @@ function redirectToForm() {
         window.open(formUrls[selectedEvent], '_blank');
     }
 }
+document.querySelector('.menu-toggle').addEventListener('click', () => {
+  document.querySelector('.nav-links').classList.toggle('active');
+});
