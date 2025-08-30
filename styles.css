@@ -79,47 +79,6 @@ body {
     padding: 0;
 }
 
-@media (max-width: 768px) {
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        background: var(--card);
-        position: absolute;
-        top: 60px;
-        right: 1rem;
-        width: 200px;
-        border-radius: var(--radius);
-        padding: 1rem;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-        z-index: 1001;
-    }
-
-    .nav-links.active {
-        display: flex;
-    }
-
-    .nav-links button,
-    .nav-links a {
-        font-size: 0.9rem;
-        padding: 0.5rem;
-        text-align: center;
-        width: 100%;
-    }
-
-    .home-button {
-        display: inline-block !important;
-        width: 100%;
-        text-align: center;
-        margin-top: 0.5rem; /* Add space above home button */
-        padding: 0.75rem 1rem; /* Ensure padding is sufficient */
-    }
-
-    /* Ensure hamburger bar doesn't overlap */
-    .menu-toggle {
-        position: relative;
-        z-index: 1002; /* Higher z-index than nav-links */
-    }
-}
 .nav-links button,
 .nav-links a {
     background: none;
@@ -350,36 +309,37 @@ body {
 
     .features-grid {
         grid-template-columns: 1fr;
-        gap: 0.75rem; /* Reduced gap for tighter spacing */
+        gap: 0.75rem;
     }
 
     .feature-card {
-        padding: 1rem 1.5rem; /* Reduced vertical padding, maintained horizontal */
-        width: 100%; /* Ensure full width */
-        max-width: 400px; /* Cap width for better proportions */
-        margin: 0 auto; /* Center cards */
-        border-radius: 0.5rem; /* Slightly smaller radius for compact look */
+        padding: 1rem 1.5rem;
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+        border-radius: 0.5rem;
     }
 
     .feature-card:last-child {
-        grid-column: auto; /* Remove spanning on mobile */
+        grid-column: auto;
     }
 
     .feature-icon {
-        width: 2.5rem; /* Slightly smaller icon */
+        width: 2.5rem;
         height: 2.5rem;
         margin-bottom: 0.75rem;
     }
 
     .feature-title {
-        font-size: 1rem; /* Slightly smaller title */
+        font-size: 1rem;
     }
 
     .feature-description {
-        font-size: 0.8rem; /* Smaller description text */
-        line-height: 1.4; /* Tighter line height */
+        font-size: 0.8rem;
+        line-height: 1.4;
     }
 }
+
 /* Sponsors Section */
 .sponsors-grid {
     display: grid;
@@ -389,7 +349,6 @@ body {
     justify-items: center;
 }
 
-/* Fine-tune for larger screens */
 @media (min-width: 576px) {
     .sponsors-grid {
         gap: 0.75rem;
@@ -397,14 +356,6 @@ body {
     }
 }
 
-/* Ensure container padding doesn't add extra space */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1rem;
-}
-
-/* Sponsor card styles */
 .sponsor-card {
     background: var(--card);
     border: 1px solid var(--border);
@@ -483,6 +434,7 @@ body {
 .sponsor-row .sponsor-card {
     flex: 0 1 220px;
 }
+
 /* Section Styles */
 .section {
     padding: 5rem 0;
@@ -981,5 +933,61 @@ body {
 
     .feature-card {
         padding: 1rem;
+    }
+}
+
+/* Hide menu-toggle on desktop */
+.menu-toggle {
+    display: none;
+}
+
+/* Ensure menu-toggle appears only on mobile */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+        font-size: 1.5rem;
+        color: var(--foreground);
+        cursor: pointer;
+        position: relative;
+        z-index: 1002;
+        margin-right: 1rem;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background: var(--card);
+        position: absolute;
+        top: 60px;
+        left: 1rem;
+        right: 1rem;
+        width: auto;
+        border-radius: var(--radius);
+        padding: 1rem;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        z-index: 1001;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links button,
+    .nav-links a {
+        font-size: 0.9rem;
+        padding: 0.5rem;
+        text-align: center;
+        width: 100%;
+    }
+
+    .home-button {
+        display: inline-block !important;
+        width: 100%;
+        text-align: center;
+        margin-top: 0.5rem;
+        padding: 0.75rem 1rem;
+        background: linear-gradient(135deg, var(--accent), var(--primary));
+        color: var(--accent-foreground) !important;
+        border-radius: var(--radius);
     }
 }
