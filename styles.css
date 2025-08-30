@@ -390,7 +390,7 @@ body {
 .sponsors-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap: 2rem;
+    gap: 2rem; /* Default gap, looks good on mobile */
     align-items: center;
     justify-items: center;
 }
@@ -467,7 +467,11 @@ body {
 .sponsor-row .sponsor-card {
     flex: 0 1 220px;
 }
-
+@media (min-width: 576px) {
+    .sponsors-grid {
+        gap: 1rem; /* Smaller gap for desktop/tablet */
+    }
+}
 /* Section Styles */
 .section {
     padding: 5rem 0;
