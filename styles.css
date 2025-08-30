@@ -86,13 +86,12 @@ body {
         background: var(--card);
         position: absolute;
         top: 60px;
-        left: 1rem; /* Adjusted to start from left for full visibility */
-        right: 1rem; /* Ensure it stretches to the right edge */
-        width: auto; /* Allow width to adjust based on content */
+        right: 1rem;
+        width: 200px;
         border-radius: var(--radius);
         padding: 1rem;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-        z-index: 1001; /* Ensure it's above other content but below menu-toggle */
+        z-index: 1001;
     }
 
     .nav-links.active {
@@ -111,18 +110,14 @@ body {
         display: inline-block !important;
         width: 100%;
         text-align: center;
-        margin-top: 0.5rem;
-        padding: 0.75rem 1rem;
-        background: linear-gradient(135deg, var(--accent), var(--primary)); /* Ensure styling is applied */
-        color: var(--accent-foreground) !important;
-        border-radius: var(--radius);
+        margin-top: 0.5rem; /* Add space above home button */
+        padding: 0.75rem 1rem; /* Ensure padding is sufficient */
     }
 
-    /* Ensure hamburger bar stays above and doesn't overlap menu */
+    /* Ensure hamburger bar doesn't overlap */
     .menu-toggle {
         position: relative;
-        z-index: 1002; /* Higher z-index to stay above nav-links */
-        margin-right: 1rem; /* Add space to prevent overlap */
+        z-index: 1002; /* Higher z-index than nav-links */
     }
 }
 .nav-links button,
