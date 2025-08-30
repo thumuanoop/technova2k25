@@ -39,14 +39,23 @@ body {
 /* HERO BASE STYLES   */
 /* ------------------ */
 .hero {
-  position: relative;
-  padding: 80px 20px;
-  color: #fff;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: center;  /* keeps vertical centering */
+  align-items: flex-start;  /* ✅ pushes content to the LEFT */
   min-height: 100vh;
+  padding: 0 20px;
 }
+
+/* For mobile screens: move it more to the right if needed */
+@media (max-width: 768px) {
+  .hero {
+    align-items: flex-end;   /* ✅ pushes content to the RIGHT */
+    text-align: right;
+    padding: 0 15px;
+  }
+}
+
 
 .hero-bg {
   position: absolute;
