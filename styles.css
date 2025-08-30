@@ -981,7 +981,8 @@ body {
     }
 
     .home-button {
-        display: inline-block !important;
+        display: flex !important; /* Force display as flex to ensure visibility */
+        justify-content: center;
         width: 100%;
         text-align: center;
         margin-top: 0.5rem;
@@ -989,5 +990,8 @@ body {
         background: linear-gradient(135deg, var(--accent), var(--primary));
         color: var(--accent-foreground) !important;
         border-radius: var(--radius);
+        text-decoration: none;
+        font-size: 1rem;
+        font-weight: 600;
     }
 }
