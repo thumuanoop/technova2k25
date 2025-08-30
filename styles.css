@@ -389,12 +389,28 @@ body {
 /* Sponsors Section */
 .sponsors-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap: 2rem; /* Default gap, looks good on mobile */
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
     align-items: center;
     justify-items: center;
 }
 
+/* Fine-tune for larger screens */
+@media (min-width: 576px) {
+    .sponsors-grid {
+        gap: 0.75rem;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+/* Ensure container padding doesn't add extra space */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Sponsor card styles */
 .sponsor-card {
     background: var(--card);
     border: 1px solid var(--border);
@@ -453,6 +469,12 @@ body {
     margin-bottom: 2rem;
 }
 
+@media (min-width: 576px) {
+    .sponsor-row {
+        gap: 1.5rem;
+    }
+}
+
 .sponsor-block {
     text-align: center;
 }
@@ -466,11 +488,6 @@ body {
 
 .sponsor-row .sponsor-card {
     flex: 0 1 220px;
-}
-@media (min-width: 576px) {
-    .sponsors-grid {
-        gap: 1rem; /* Smaller gap for desktop/tablet */
-    }
 }
 /* Section Styles */
 .section {
