@@ -137,6 +137,54 @@ body {
         display: inline-block !important; /* Force visibility */
     }
 }
+/* Navbar base */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 24px;
+  background: #0d47a1;
+  color: #fff;
+}
+
+/* Nav links */
+.nav-links {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+/* Hide nav links in mobile */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: #0d47a1;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    width: 200px;
+    border-radius: 8px;
+    padding: 10px;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  /* Hamburger menu */
+  .menu-toggle {
+    display: block;
+    cursor: pointer;
+  }
+}
+
+/* Default hide menu toggle on desktop */
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
 
 
 /* Home button styling */
