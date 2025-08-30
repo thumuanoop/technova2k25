@@ -981,7 +981,7 @@ body {
     }
 
     .home-button {
-        display: flex !important; /* Force display as flex to ensure visibility */
+        display: flex !important;
         justify-content: center;
         width: 100%;
         text-align: center;
