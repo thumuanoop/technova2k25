@@ -46,9 +46,9 @@ document.addEventListener('click', function(event) {
     }
 });
 
-// Close menu when clicking a navigation link
-document.querySelectorAll('.nav-links button').forEach(button => {
-    button.addEventListener('click', () => {
+// Close menu when clicking a navigation link or home button
+document.querySelectorAll('.nav-links button, .nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
         const navLinks = document.querySelector('.nav-links');
         navLinks.classList.remove('active');
     });
