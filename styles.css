@@ -318,7 +318,7 @@ body {
 .problem-box {
   flex: 0 0 90%; /* 👈 each box takes ~90% of screen width */
   max-width: 90%;
-  background: white;
+  background: #1558b0;
   border-radius: 12px;
   padding: 16px;
   scroll-snap-align: start;
