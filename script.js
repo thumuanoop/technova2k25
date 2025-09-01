@@ -200,4 +200,258 @@ const themeProblems = {
             description: "Create a 360° virtual tour platform for exploring heritage sites remotely with immersive details."
         },
         {
-            question
+            question: "Gamified Culture Learning App",
+            description: "Develop a gamified app to teach users about cultural traditions and history through interactive challenges."
+        },
+        {
+            question: "Smart Heritage Tourism Planner",
+            description: "Build an AI-based planner for creating personalized heritage tourism itineraries with cultural insights."
+        }
+    ],
+    'Agriculture, Food Tech & Rural Development': [
+        {
+            question: "Pest & Disease Alert System",
+            description: "Create an app where farmers upload crop images for AI-based pest and disease diagnosis and alerts."
+        },
+        {
+            question: "Smart Farming with IoT",
+            description: "Develop an IoT system for automated irrigation and fertilization, optimizing crop growth and resource use."
+        },
+        {
+            question: "Rural E-commerce Platforms",
+            description: "Build a platform connecting farmers directly to buyers, streamlining agricultural supply chains."
+        },
+        {
+            question: "Crop Yield Prediction",
+            description: "Create an AI/ML model using weather and satellite data to predict crop yields accurately."
+        },
+        {
+            question: "Food Donation & Waste Reduction App",
+            description: "Develop an app to coordinate food donations and reduce waste by connecting donors with NGOs."
+        },
+        {
+            question: "AI Crop Disease Detection",
+            description: "Build a computer vision system to detect crop diseases from images, providing actionable insights."
+        },
+        {
+            question: "IoT-based Smart Irrigation System",
+            description: "Create an IoT solution for smart irrigation, adjusting water usage based on soil and weather data."
+        }
+    ],
+    'Transportation & Logistics': [
+        {
+            question: "Predictive Analytics for Traffic",
+            description: "Develop an IoT and AI-based system to forecast traffic patterns and optimize commuting routes."
+        },
+        {
+            question: "Smart Public Transport Scheduling",
+            description: "Create a system for real-time public transport scheduling based on occupancy and demand."
+        },
+        {
+            question: "Smart Parking System with Live Updates",
+            description: "Build an app providing real-time parking availability updates for urban areas."
+        },
+        {
+            question: "Smart Bus/Train Tracking App",
+            description: "Develop a mobile app for tracking buses or trains in real-time with estimated arrival times."
+        },
+        {
+            question: "Carpooling & Ride-Sharing Platform",
+            description: "Create a platform to facilitate carpooling and ride-sharing, reducing traffic congestion and emissions."
+        }
+    ],
+    'Robotics & Drones': [
+        {
+            question: "Delivery Drones",
+            description: "Design a drone-based delivery system for efficient last-mile logistics in urban and rural areas."
+        },
+        {
+            question: "Autonomous Inspection Robot",
+            description: "Develop a robot for inspecting infrastructure like bridges or pipelines using AI and sensors."
+        },
+        {
+            question: "Disaster Response Drones",
+            description: "Create drones for delivering supplies and gathering data in disaster-affected areas."
+        },
+        {
+            question: "Agricultural Drones for Crop Monitoring",
+            description: "Build drones with imaging technology to monitor crop health and optimize farming practices."
+        }
+    ],
+    'Fitness & Sports': [
+        {
+            question: "Workout Planner with IoT",
+            description: "Develop an IoT-based app to create personalized workout plans using wearable device data."
+        },
+        {
+            question: "AI-Powered Sports Analytics",
+            description: "Build an AI system to analyze athlete performance and provide real-time coaching insights."
+        },
+        {
+            question: "Gamified Fitness App",
+            description: "Create a mobile app that gamifies fitness goals to motivate users through challenges and rewards."
+        },
+        {
+            question: "Injury Prevention System",
+            description: "Develop a wearable device and app to monitor biomechanics and prevent sports injuries."
+        }
+    ]
+};
+
+// Initialize theme cards with hover and click events
+function initializeThemeCards() {
+    const themeCards = document.querySelectorAll('.theme-card');
+    themeCards.forEach(card => {
+        const theme = card.dataset.theme;
+        const overlay = card.querySelector('.theme-overlay');
+        const overlayContent = card.querySelector('.theme-overlay-content');
+        const problemBoxes = card.querySelector('.theme-problem-boxes');
+
+        // Populate overlay content for hover
+        if (themeProblems[theme]) {
+            overlayContent.innerHTML = themeProblems[theme].map(prob => `<p>${prob.question}</p>`).join('');
+        }
+
+        // Hover event listeners
+        card.addEventListener('mouseenter', () => {
+            overlay.classList.remove('hidden');
+        });
+
+        card.addEventListener('mouseleave', () => {
+            overlay.classList.add('hidden');
+        });
+
+        // Click event listener for problem boxes
+        card.addEventListener('click', (e) => {
+            e.preventDefault(); // Prevent any default behavior
+            // If the same card is clicked again, toggle off
+            if (activeThemeCard === card) {
+                problemBoxes.classList.remove('active');
+                activeThemeCard = null;
+                return;
+            }
+
+            // Hide all other problem boxes
+            document.querySelectorAll('.theme-problem-boxes').forEach(box => {
+                box.classList.remove('active');
+            });
+
+            // Clear previous content
+            problemBoxes.innerHTML = '';
+
+            // Populate problem boxes with one box per problem
+            if (themeProblems[theme]) {
+                themeProblems[theme].forEach(prob => {
+                    const box = document.createElement('div');
+                    box.className = 'problem-box';
+                    box.innerHTML = `
+                        <i class="fas fa-lightbulb problem-icon"></i>
+                        <div class="problem-content">
+                            <h4 class="problem-heading">${prob.question}</h4>
+                            <p class="problem-description">${prob.description}</p>
+                        </div>
+                    `;
+                    problemBoxes.appendChild(box);
+                });
+            }
+
+            // Show the problem boxes
+            problemBoxes.classList.add('active');
+            activeThemeCard = card;
+        });
+    });
+}
+
+// Toggle mobile menu
+function toggleMenu() {
+    const navLinks = document.querySelector('.nav-links');
+    navLinks.classList.toggle('active');
+}
+
+// Show main page
+function showMain() {
+    document.getElementById('main-page').classList.remove('hidden');
+    document.getElementById('themes-page').classList.add('hidden');
+    document.querySelector('.nav-links').classList.remove('active');
+}
+
+// Show themes page
+function showThemes() {
+    document.getElementById('main-page').classList.add('hidden');
+    document.getElementById('themes-page').classList.remove('hidden');
+    document.querySelector('.nav-links').classList.remove('active');
+}
+
+// Scroll to section
+function scrollToSection(sectionId) {
+    const section = document.getElementById(sectionId);
+    if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+    }
+}
+
+// Select event type
+function selectEvent(eventType) {
+    selectedEvent = eventType;
+    document.querySelectorAll('.event-option').forEach(opt => {
+        opt.classList.remove('selected');
+    });
+    document.getElementById(`event-${eventType}`).classList.add('selected');
+
+    // Update team size options
+    updateTeamOptions();
+    updatePricing();
+}
+
+// Update team size options based on event type
+function updateTeamOptions() {
+    const teamOptions = document.querySelectorAll('.team-option');
+    teamOptions.forEach(opt => {
+        const size = parseInt(opt.id.split('-')[1]);
+        opt.classList.remove('disabled', 'selected');
+        if (selectedEvent === 'coding' && size > 2) {
+            opt.classList.add('disabled');
+        }
+    });
+    selectedTeamSize = null;
+    updatePricing();
+}
+
+// Select team size
+function selectTeamSize(size) {
+    if (selectedEvent === 'coding' && size > 2) return;
+    selectedTeamSize = size;
+    document.querySelectorAll('.team-option').forEach(opt => {
+        opt.classList.remove('selected');
+    });
+    document.getElementById(`team-${size}`).classList.add('selected');
+    updatePricing();
+}
+
+// Update pricing display
+function updatePricing() {
+    const pricingDisplay = document.getElementById('pricing-display');
+    const priceAmount = document.getElementById('price-amount');
+    const priceDetails = document.getElementById('price-details');
+
+    if (selectedEvent && selectedTeamSize) {
+        const price = pricing[selectedEvent][selectedTeamSize];
+        priceAmount.textContent = `₹${price}`;
+        priceDetails.textContent = `Registration for ${selectedTeamSize} member${selectedTeamSize > 1 ? 's' : ''} in ${selectedEvent.charAt(0).toUpperCase() + selectedEvent.slice(1)}`;
+        pricingDisplay.classList.remove('hidden');
+    } else {
+        pricingDisplay.classList.add('hidden');
+    }
+}
+
+// Redirect to Google Form
+function redirectToForm() {
+    if (selectedEvent) {
+        window.open(formUrls[selectedEvent], '_blank');
+    }
+}
+
+// Initialize on page load
+document.addEventListener('DOMContentLoaded', () => {
+    initializeThemeCards();
+});
