@@ -105,11 +105,16 @@
 /* Close button */
 .close-btn {
   position: absolute;
-  top: 10px;
-  right: 15px;
-  font-size: 28px;
-  cursor: pointer;
-  color: #1558b0;
+  display: inline-block;
+    padding: 0.5rem 1rem;
+    background: linear-gradient(135deg, var(--accent), var(--primary));
+    color: var(--accent-foreground) !important;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: var(--radius);
+    transition: all 0.3s ease;
+    box-shadow: 0 0 8px rgba(59, 130, 246, 0.5);
 }
 
 
