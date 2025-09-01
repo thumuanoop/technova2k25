@@ -34,7 +34,7 @@
 }
 
 #problem-overlay.active {
-  display: block; /* show only when active */
+  display: flex; /* show only when active */
 }
 
 
