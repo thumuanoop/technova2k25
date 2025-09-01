@@ -1001,38 +1001,7 @@ body {
     }
 }
 
-.problem-box {
-    display: flex;
-    align-items: flex-start;
-    gap: 1rem;
-    padding: 1rem;
-    background: var(--card);
-    border-radius: var(--radius);
-    border: 1px solid var(--border);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-}
 
-.problem-icon {
-    color: var(--accent);
-    font-size: 1.25rem;
-    margin-top: 0.25rem;
-}
-
-.problem-content {
-    flex: 1;
-}
-
-.problem-heading {
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: var(--foreground);
-    margin-bottom: 0.5rem;
-}
-
-.problem-description {
-    font-size: 0.9rem;
-    color: var(--muted-foreground);
-}
 
 /* Responsive Theme Overlay and Problem Boxes */
 @media (max-width: 768px) {
