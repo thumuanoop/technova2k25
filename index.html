@@ -56,7 +56,7 @@
                             </button>
                             <button class="btn btn-secondary" onclick="showThemes()">
                                 <i class="fas fa-lightbulb" style="margin-right: 0.5rem;"></i>
-                                Problem Statements
+                                Hackathon Themes
                             </button>
                         </div>
                     </div>
@@ -114,7 +114,7 @@
                                     </div>
                                    <div class="timeline-detail">
                                         <i class="fas fa-clock"></i>
-                                        <span>9:30 AM - 10:30 AM - Inaguration</span>
+                                        <span>9:30 AM - 10:30 AM - Inaugration</span>
                                     </div>
                                     <div class="timeline-detail">
                                         <i class="fas fa-clock"></i>
@@ -162,7 +162,7 @@
                                     </div>
                                     <div class="timeline-detail">
                                         <i class="fas fa-hourglass-half"></i>
-                                        <span>12-hour coding marathon & Prototype Building</span>
+                                        <span>13-hour coding marathon</span>
                                     </div>
                                 </div>
                             </div>
@@ -342,7 +342,99 @@
                 </div>
             </div>
         </section>
-         <!-- Themes Page -->
+
+        <!-- Venue Section -->
+        <section id="venue" class="section section-alt">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Venue</h2>
+                    <p class="section-description">Join us at the premier technology institute in Visakhapatnam.</p>
+                </div>
+
+                <div class="venue-grid">
+                    <div class="venue-info">
+                        <div class="venue-detail">
+                            <i class="fas fa-university"></i>
+                            <div class="venue-detail-content">
+                                <h4>Anil Neerukonda Institute of Technology & Sciences</h4>
+                                <p>State-of-the-art campus with modern facilities for technical events and competitions.</p>
+                            </div>
+                        </div>
+                        <div class="venue-detail">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div class="venue-detail-content">
+                                <h4>Location</h4>
+                                <p>Visakhapatnam, Andhra Pradesh, India</p>
+                            </div>
+                        </div>
+                        <div class="venue-detail">
+                            <i class="fas fa-wifi"></i>
+                            <div class="venue-detail-content">
+                                <h4>Facilities</h4>
+                                <p>High-speed internet, power backup, and modern computer labs.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="venue-image">
+                        <img src="anits.jpeg" alt="Image of Anil Neerukonda Institute of Technology and Sciences" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-brand">
+                        <div class="logo">
+                            <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect width="16" height="10" x="2" y="3" rx="2" ry="2"/>
+                                <path d="m7 11 5-5 5 5"/>
+                                <path d="m7 17 5-5 5 5"/>
+                            </svg>
+                            <span>TechNova 2025</span>
+                        </div>
+                        <p>Tech Partners: Sanjivo & AuraTech Vision</p>
+                    </div>
+
+                    <div class="footer-section">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><button onclick="showMain(); setTimeout(() => scrollToSection('schedule'), 100);">Schedule</button></li>
+                            <li><button onclick="showMain(); setTimeout(() => scrollToSection('register'), 100);">Register</button></li>
+                            <li><button onclick="showMain(); setTimeout(() => scrollToSection('venue'), 100);">Venue</button></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-section">
+                        <h4>Events</h4>
+                        <ul>
+                            <li>Tech Talks</li>
+                            <li>Hackathon</li>
+                            <li>Coding Quest</li>
+                            <li>Valedictory</li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-section">
+                        <h4>Contact</h4>
+                        <ul>
+                            <li><i class="fas fa-envelope"></i>&nbsp; auratechvision@gmail.com</li>
+                            <li><i class="fas fa-phone"></i>&nbsp; +91 7013711384</li>
+                            <li><i class="fas fa-map-marker-alt"></i>&nbsp; ANITS, Visakhapatnam</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="footer-copyright">
+                    <p>&copy; 2025 TechNova. All rights reserved. | Organized by Department of CSE(DS),ANITS</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Themes Page -->
     <div id="themes-page" class="hidden">
         <!-- Hackathon Themes Section -->
         <section id="themes" class="section">
@@ -354,7 +446,7 @@
                         <i class="fas fa-home" style="margin-right: 0.5rem;"></i>
                         Back to Home
                     </button>
-                </div> 
+                </div>
 
                 <div class="themes-grid">
                     <div class="theme-card" data-theme="Tourism">
@@ -363,9 +455,8 @@
                         <p class="theme-description">Create innovative digital experiences to promote travel, local businesses, and cultural heritage.</p>
                         <div class="theme-overlay hidden">
                             <h3 class="theme-overlay-title">Tourism</h3>
-                                <div id="themes-page" class="hidden">
-                                    </div>
-      
+                            <div class="theme-overlay-content"></div>
+                        </div>
                     </div>
 
                     <div class="theme-card" data-theme="Renewable & Sustainable Energy">
@@ -480,97 +571,6 @@
                 </div>
             </div>
         </section>
-
-        <!-- Venue Section -->
-        <section id="venue" class="section section-alt">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Venue</h2>
-                    <p class="section-description">Join us at the premier technology institute in Visakhapatnam.</p>
-                </div>
-
-                <div class="venue-grid">
-                    <div class="venue-info">
-                        <div class="venue-detail">
-                            <i class="fas fa-university"></i>
-                            <div class="venue-detail-content">
-                                <h4>Anil Neerukonda Institute of Technology & Sciences</h4>
-                                <p>State-of-the-art campus with modern facilities for technical events and competitions.</p>
-                            </div>
-                        </div>
-                        <div class="venue-detail">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <div class="venue-detail-content">
-                                <h4>Location</h4>
-                                <p>Visakhapatnam, Andhra Pradesh, India</p>
-                            </div>
-                        </div>
-                        <div class="venue-detail">
-                            <i class="fas fa-wifi"></i>
-                            <div class="venue-detail-content">
-                                <h4>Facilities</h4>
-                                <p>High-speed internet, power backup, and modern computer labs.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="venue-image">
-                        <img src="anits.jpeg" alt="Image of Anil Neerukonda Institute of Technology and Sciences" />
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Footer -->
-        <footer class="footer">
-            <div class="container">
-                <div class="footer-content">
-                    <div class="footer-brand">
-                        <div class="logo">
-                            <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <rect width="16" height="10" x="2" y="3" rx="2" ry="2"/>
-                                <path d="m7 11 5-5 5 5"/>
-                                <path d="m7 17 5-5 5 5"/>
-                            </svg>
-                            <span>TechNova 2025</span>
-                        </div>
-                        <p>Tech Partners: Sanjivo & AuraTech Vision</p>
-                    </div>
-
-                    <div class="footer-section">
-                        <h4>Quick Links</h4>
-                        <ul>
-                            <li><button onclick="showMain(); setTimeout(() => scrollToSection('schedule'), 100);">Schedule</button></li>
-                            <li><button onclick="showMain(); setTimeout(() => scrollToSection('register'), 100);">Register</button></li>
-                            <li><button onclick="showMain(); setTimeout(() => scrollToSection('venue'), 100);">Venue</button></li>
-                        </ul>
-                    </div>
-
-                    <div class="footer-section">
-                        <h4>Events</h4>
-                        <ul>
-                            <li>Tech Talks</li>
-                            <li>Hackathon</li>
-                            <li>Coding Quest</li>
-                            <li>Valedictory</li>
-                        </ul>
-                    </div>
-
-                    <div class="footer-section">
-                        <h4>Contact</h4>
-                        <ul>
-                            <li><i class="fas fa-envelope"></i>&nbsp; auratechvision@gmail.com</li>
-                            <li><i class="fas fa-phone"></i>&nbsp; +91 7013711384</li>
-                            <li><i class="fas fa-map-marker-alt"></i>&nbsp; ANITS, Visakhapatnam</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="footer-copyright">
-                    <p>&copy; 2025 TechNova. All rights reserved. | Organized by Department of CSE(DS),ANITS</p>
-                </div>
-            </div>
-        </footer>
-    </div>
 
         <!-- Footer -->
         <footer class="footer">
