@@ -47,31 +47,35 @@
     width: 100%;
 }
 
+/* Problem boxes inside overlay */
 .problem-box {
-  background: #fff;
-  color: #333;
-  border-radius: 10px;
+  background: #2b2b2b;       /* dark background */
+  border: 1px solid #444;
   padding: 20px;
   margin-bottom: 20px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  transition: transform 0.2s ease;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .problem-box:hover {
-  transform: translateY(-5px);
+  transform: translateY(-4px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.6);
 }
 
-.problem-heading {
-  font-size: 18px;
+.problem-box h3 {
+  font-size: 20px;
   font-weight: bold;
-  margin-bottom: 10px;
-  color: #1a73e8; /* blue heading */
+  color: #ffcc00;            /* heading in yellow */
+  margin-bottom: 12px;
 }
 
-.problem-description {
+.problem-box p {
   font-size: 15px;
   line-height: 1.6;
+  color: #ddd;               /* description in light grey */
 }
+
 
 /* Overlay background */
 .overlay {
@@ -116,23 +120,7 @@
   margin-top: 40px;
 }
 
-.problem-box {
-  background: #2b2b2b;
-  padding: 16px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.5);
-}
 
-.problem-box h3 {
-  margin: 0 0 10px;
-  font-size: 18px;
-  color: #ffcc00;
-}
-
-.problem-box p {
-  margin: 0;
-  color: #ddd;
-}
 
 body {
     font-family: 'Inter', system-ui, sans-serif;
