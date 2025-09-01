@@ -449,85 +449,124 @@
                 </div>
 
                 <div class="themes-grid">
-                    <div class="theme-card" onclick="openThemeModal('Tourism', tourismProblems)">
+                    <div class="theme-card" data-theme="Tourism">
                         <div class="theme-icon"><i class="fas fa-globe-americas"></i></div>
                         <h3 class="theme-title">Tourism</h3>
                         <p class="theme-description">Create innovative digital experiences to promote travel, local businesses, and cultural heritage.</p>
+                        <div class="theme-overlay hidden">
+                            <h3 class="theme-overlay-title">Tourism</h3>
+                            <div class="theme-overlay-content"></div>
+                        </div>
                     </div>
 
-                    <div class="theme-card" onclick="openThemeModal('Renewable & Sustainable Energy', energyProblems)">
+                    <div class="theme-card" data-theme="Renewable & Sustainable Energy">
                         <div class="theme-icon"><i class="fas fa-solar-panel"></i></div>
                         <h3 class="theme-title">Renewable & Sustainable Energy</h3>
                         <p class="theme-description">Design green technologies for solar, wind, and clean energy storage solutions.</p>
+                        <div class="theme-overlay hidden">
+                            <h3 class="theme-overlay-title">Renewable & Sustainable Energy</h3>
+                            <div class="theme-overlay-content"></div>
+                        </div>
                     </div>
 
-                    <div class="theme-card" onclick="openThemeModal('Blockchain & Cybersecurity', blockchainProblems)">
+                    <div class="theme-card" data-theme="Blockchain & Cybersecurity">
                         <div class="theme-icon"><i class="fas fa-shield-alt"></i></div>
                         <h3 class="theme-title">Blockchain & Cybersecurity</h3>
                         <p class="theme-description">Build secure, decentralized applications to protect data and digital transactions.</p>
+                        <div class="theme-overlay hidden">
+                            <h3 class="theme-overlay-title">Blockchain & Cybersecurity</h3>
+                            <div class="theme-overlay-content"></div>
+                        </div>
                     </div>
 
-                    <div class="theme-card" onclick="openThemeModal('Smart Education', educationProblems)">
+                    <div class="theme-card" data-theme="Smart Education">
                         <div class="theme-icon"><i class="fas fa-chalkboard-teacher"></i></div>
                         <h3 class="theme-title">Smart Education</h3>
                         <p class="theme-description">Enhance learning with AR/VR classrooms, AI tutors, and digital accessibility.</p>
+                        <div class="theme-overlay hidden">
+                            <h3 class="theme-overlay-title">Smart Education</h3>
+                            <div class="theme-overlay-content"></div>
+                        </div>
                     </div>
 
-                    <div class="theme-card" onclick="openThemeModal('Disaster Management', disasterProblems)">
+                    <div class="theme-card" data-theme="Disaster Management">
                         <div class="theme-icon"><i class="fas fa-first-aid"></i></div>
                         <h3 class="theme-title">Disaster Management</h3>
                         <p class="theme-description">Create early-warning systems, rescue coordination apps, and crisis response tools.</p>
+                        <div class="theme-overlay hidden">
+                            <h3 class="theme-overlay-title">Disaster Management</h3>
+                            <div class="theme-overlay-content"></div>
+                        </div>
                     </div>
 
-                    <div class="theme-card" onclick="openThemeModal('Games & Toys', gamesProblems)">
+                    <div class="theme-card" data-theme="Games & Toys">
                         <div class="theme-icon"><i class="fas fa-gamepad"></i></div>
                         <h3 class="theme-title">Games & Toys</h3>
                         <p class="theme-description">Develop interactive, educational, and fun gaming solutions for all ages.</p>
+                        <div class="theme-overlay hidden">
+                            <h3 class="theme-overlay-title">Games & Toys</h3>
+                            <div class="theme-overlay-content"></div>
+                        </div>
                     </div>
 
-                    <div class="theme-card" onclick="openThemeModal('Health Tech', healthProblems)">
+                    <div class="theme-card" data-theme="Health Tech">
                         <div class="theme-icon"><i class="fas fa-heartbeat"></i></div>
                         <h3 class="theme-title">Health Tech</h3>
                         <p class="theme-description">Innovate in telemedicine, AI diagnostics, patient care, and wellness solutions.</p>
+                        <div class="theme-overlay hidden">
+                            <h3 class="theme-overlay-title">Health Tech</h3>
+                            <div class="theme-overlay-content"></div>
+                        </div>
                     </div>
 
-                    <div class="theme-card" onclick="openThemeModal('Heritage & Culture', heritageProblems)">
+                    <div class="theme-card" data-theme="Heritage & Culture">
                         <div class="theme-icon"><i class="fas fa-landmark"></i></div>
                         <h3 class="theme-title">Heritage & Culture</h3>
                         <p class="theme-description">Digitally preserve art, history, and culture with immersive tech experiences.</p>
+                        <div class="theme-overlay hidden">
+                            <h3 class="theme-overlay-title">Heritage & Culture</h3>
+                            <div class="theme-overlay-content"></div>
+                        </div>
                     </div>
 
-                    <div class="theme-card" onclick="openThemeModal('Agriculture, Food Tech & Rural Development', agricultureProblems)">
+                    <div class="theme-card" data-theme="Agriculture, Food Tech & Rural Development">
                         <div class="theme-icon"><i class="fas fa-tractor"></i></div>
                         <h3 class="theme-title">Agriculture, Food Tech & Rural Development</h3>
                         <p class="theme-description">Improve farming with IoT, smart irrigation, and supply-chain innovations.</p>
+                        <div class="theme-overlay hidden">
+                            <h3 class="theme-overlay-title">Agriculture, Food Tech & Rural Development</h3>
+                            <div class="theme-overlay-content"></div>
+                        </div>
                     </div>
 
-                    <div class="theme-card" onclick="openThemeModal('Transportation & Logistics', transportProblems)">
+                    <div class="theme-card" data-theme="Transportation & Logistics">
                         <div class="theme-icon"><i class="fas fa-truck"></i></div>
                         <h3 class="theme-title">Transportation & Logistics</h3>
                         <p class="theme-description">Design smart mobility systems, EV solutions, and AI-powered logistics.</p>
+                        <div class="theme-overlay hidden">
+                            <h3 class="theme-overlay-title">Transportation & Logistics</h3>
+                            <div class="theme-overlay-content"></div>
+                        </div>
                     </div>
 
-                    <div class="theme-card" onclick="openThemeModal('Robotics & Drones', roboticsProblems)">
+                    <div class="theme-card" data-theme="Robotics & Drones">
                         <div class="theme-icon"><i class="fas fa-robot"></i></div>
                         <h3 class="theme-title">Robotics & Drones</h3>
                         <p class="theme-description">Create autonomous systems for industries, healthcare, and exploration.</p>
+                        <div class="theme-overlay hidden">
+                            <h3 class="theme-overlay-title">Robotics & Drones</h3>
+                            <div class="theme-overlay-content"></div>
+                        </div>
                     </div>
 
-                    <div class="theme-card" onclick="openThemeModal('Fitness & Sports', fitnessProblems)">
+                    <div class="theme-card" data-theme="Fitness & Sports">
                         <div class="theme-icon"><i class="fas fa-dumbbell"></i></div>
                         <h3 class="theme-title">Fitness & Sports</h3>
                         <p class="theme-description">Build apps for tracking health, gamifying workouts, and enhancing athletic training.</p>
-                    </div>
-                </div>
-
-                <!-- Theme Modal -->
-                <div id="theme-modal" class="theme-modal hidden">
-                    <div class="theme-modal-content">
-                        <span class="theme-modal-close" onclick="closeThemeModal()">&times;</span>
-                        <h2 id="theme-modal-title">Theme Title</h2>
-                        <div id="theme-modal-description"></div>
+                        <div class="theme-overlay hidden">
+                            <h3 class="theme-overlay-title">Fitness & Sports</h3>
+                            <div class="theme-overlay-content"></div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -572,7 +611,7 @@
                         <h4>Contact</h4>
                         <ul>
                             <li><i class="fas fa-envelope"></i>&nbsp; info@technova2025.com</li>
-                            <li><i class="fas fa-phone"></i>&nbsp; +91 XXXXX XXXXX</li>
+                            <li><i class="fas fa-phone"></i>&nbsp; +91 7013711384</li>
                             <li><i class="fas fa-map-marker-alt"></i>&nbsp; ANITS, Visakhapatnam</li>
                         </ul>
                     </div>
