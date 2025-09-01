@@ -321,9 +321,9 @@ function initializeThemeCards() {
                 const box = document.createElement('div');
                 box.className = 'problem-box';
                 box.innerHTML = `
-                    <h3>${problem.question}</h3>
-                    <p>${problem.description}</p>
-                `;
+    <h3 class="problem-heading">${problem.question}</h3>
+    <p class="problem-description">${problem.description}</p>
+`;
                 overlayContent.appendChild(box);
             });
 
