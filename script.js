@@ -339,14 +339,17 @@ function initializeThemeCards() {
             // Clear previous content
             problemBoxes.innerHTML = '';
 
-            // Populate problem boxes
+            // Populate problem boxes with icon
             if (themeProblems[theme]) {
                 themeProblems[theme].forEach(prob => {
                     const box = document.createElement('div');
                     box.className = 'problem-box';
                     box.innerHTML = `
-                        <h4 class="problem-heading">${prob.question}</h4>
-                        <p class="problem-description">${prob.description}</p>
+                        <i class="fas fa-lightbulb problem-icon"></i>
+                        <div class="problem-content">
+                            <h4 class="problem-heading">${prob.question}</h4>
+                            <p class="problem-description">${prob.description}</p>
+                        </div>
                     `;
                     problemBoxes.appendChild(box);
                 });
