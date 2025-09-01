@@ -112,14 +112,6 @@
   color: #fff;
 }
 
-/* Problem boxes */
-.problem-boxes {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 16px;
-  margin-top: 40px;
-}
-
 
 
 body {
