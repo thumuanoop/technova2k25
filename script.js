@@ -298,69 +298,47 @@ const themeProblems = {
     ]
 };
 
-// Initialize theme cards with hover and click events
 function initializeThemeCards() {
     const themeCards = document.querySelectorAll('.theme-card');
+
     themeCards.forEach(card => {
-        const theme = card.dataset.theme;
-        const overlay = card.querySelector('.theme-overlay');
-        const overlayContent = card.querySelector('.theme-overlay-content');
-        const problemBoxes = card.querySelector('.theme-problem-boxes');
+        card.addEventListener('click', () => {
+            const theme = card.dataset.theme;
+            const problems = themeProblems[theme];
 
-        // Populate overlay content for hover
-        if (themeProblems[theme]) {
-            overlayContent.innerHTML = themeProblems[theme].map(prob => `<p>${prob.question}</p>`).join('');
-        }
+            if (problems) {
+                const problemBoxesContainer = document.getElementById('problemBoxes');
+                problemBoxesContainer.innerHTML = "";
 
-        // Hover event listeners
-        card.addEventListener('mouseenter', () => {
-            overlay.classList.remove('hidden');
-        });
-
-        card.addEventListener('mouseleave', () => {
-            overlay.classList.add('hidden');
-        });
-
-        // Click event listener for problem boxes
-        card.addEventListener('click', (e) => {
-            e.preventDefault(); // Prevent any default behavior
-            // If the same card is clicked again, toggle off
-            if (activeThemeCard === card) {
-                problemBoxes.classList.remove('active');
-                activeThemeCard = null;
-                return;
-            }
-
-            // Hide all other problem boxes
-            document.querySelectorAll('.theme-problem-boxes').forEach(box => {
-                box.classList.remove('active');
-            });
-
-            // Clear previous content
-            problemBoxes.innerHTML = '';
-
-            // Populate problem boxes with one box per problem
-            if (themeProblems[theme]) {
-                themeProblems[theme].forEach(prob => {
+                problems.forEach(problem => {
                     const box = document.createElement('div');
-                    box.className = 'problem-box';
+                    box.className = "problem-box";
                     box.innerHTML = `
-                        <i class="fas fa-lightbulb problem-icon"></i>
-                        <div class="problem-content">
-                            <h4 class="problem-heading">${prob.question}</h4>
-                            <p class="problem-description">${prob.description}</p>
-                        </div>
+                        <h3>${problem.question}</h3>
+                        <p>${problem.description}</p>
                     `;
-                    problemBoxes.appendChild(box);
+                    problemBoxesContainer.appendChild(box);
                 });
-            }
 
-            // Show the problem boxes
-            problemBoxes.classList.add('active');
-            activeThemeCard = card;
+                // Show overlay
+                document.getElementById('problemOverlay').style.display = "flex";
+            }
         });
     });
+
+    // Close overlay
+    document.getElementById('closeOverlay').addEventListener('click', () => {
+        document.getElementById('problemOverlay').style.display = "none";
+    });
+
+    // Close when clicking outside
+    document.getElementById('problemOverlay').addEventListener('click', (e) => {
+        if (e.target.id === "problemOverlay") {
+            document.getElementById('problemOverlay').style.display = "none";
+        }
+    });
 }
+
 
 // Toggle mobile menu
 function toggleMenu() {
