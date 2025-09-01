@@ -911,7 +911,7 @@ body {
     display: flex;
     align-items: flex-start;
     gap: 1rem;
-    padding: 1.5rem;
+    padding: 1rem;
     background: var(--card);
     border-radius: var(--radius);
     border: 1px solid var(--border);
