@@ -1249,3 +1249,46 @@ body {
         display: flex !important;
     }
 }
+/* ✅ Default (desktop / website view) */
+#overlay-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
+  padding: 10px;
+}
+
+.problem-box {
+  background: #1558b0;   /* Blue background */
+  color: white;
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.problem-box h3 {
+  color: white;
+  margin-bottom: 10px;
+}
+
+.problem-box p {
+  color: #f0f0f0;
+}
+
+/* ✅ Mobile view (horizontal scroll) */
+@media (max-width: 768px) {
+  #overlay-content {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    overflow-y: hidden;
+    gap: 16px;
+    padding: 10px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .problem-box {
+    flex: 0 0 90%; /* one box takes 90% width */
+    max-width: 90%;
+    scroll-snap-align: start;
+  }
+}
