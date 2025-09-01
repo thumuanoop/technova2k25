@@ -72,17 +72,115 @@ function showMain() {
     document.getElementById('main-page').classList.remove('hidden');
     window.scrollTo(0, 0);
 }
-// Function to open modal with theme content
-function openThemeModal(title, description) {
+// Modal Functions
+function openThemeModal(title, problems) {
   document.getElementById("theme-modal-title").innerText = title;
-  document.getElementById("theme-modal-description").innerText = description;
+  const descContainer = document.getElementById("theme-modal-description");
+  descContainer.innerHTML = problems.map(p => `<p>• ${p}</p>`).join("");
   document.getElementById("theme-modal").classList.remove("hidden");
 }
 
-// Function to close modal
 function closeThemeModal() {
   document.getElementById("theme-modal").classList.add("hidden");
 }
+
+// Problem statements for each theme
+const tourismProblems = [
+  "Smart Tourist Guide Application – AI-powered app suggesting routes, attractions, food, and stays.",
+  "Crowd & Queue Management – IoT/AI system to monitor tourist spot density and suggest alternates.",
+  "Multilingual Real-Time Translator – Speech-to-speech translator for tourists.",
+  "Accessible Tourism for Differently-Abled – Platform with accessibility info and guides.",
+  "Smart Tourism Chatbot – Multilingual chatbot with maps, transport, and booking.",
+  "AR for Heritage Tourism – AR-based 3D reconstructions and immersive historical info."
+];
+
+const energyProblems = [
+  "Smart Energy Consumption Monitoring – IoT + AI to track usage and optimize scheduling.",
+  "Energy Saving Challenge App – Gamified rewards for reducing consumption.",
+  "IoT Smart Home Energy System – Auto-control appliances to save electricity.",
+  "Smart Street Light Controller – Auto ON/OFF and dimming based on motion."
+];
+
+const blockchainProblems = [
+  "Blockchain for Secure Transactions – Tamper-proof e-commerce and banking.",
+  "Next-Gen Authentication – Passwordless login with biometrics or cryptographic keys.",
+  "Cyber Safety for Children – Smart parental controls and safe browsing tools.",
+  "Blockchain-based Credential Verification – Secure certificate storage and sharing.",
+  "Secure Digital Voting Platform – Blockchain + encryption + biometrics.",
+  "AI-based Fraud Detection – ML models for anomaly detection in transactions."
+];
+
+const educationProblems = [
+  "Personalized Learning Recommendation System – AI-based content suggestions.",
+  "AI Career Advisor – Personalized career guidance with market trends.",
+  "Skill Gap Analysis Tool – Identify missing skills vs. industry demand.",
+  "Smart Classroom Management – IoT system to monitor classrooms.",
+  "Smart Exam Proctoring – AI for secure online exams."
+];
+
+const disasterProblems = [
+  "Wildfire Mapping & Alerting – AI + IoT early detection system.",
+  "Crowdsourced Disaster Information – Citizen-reported incidents with location & media.",
+  "Offline Communication App – Bluetooth/Wi-Fi Direct disaster chat.",
+  "Resource & Volunteer Management – Platform for better relief coordination.",
+  "Damage Assessment via Computer Vision – AI analysis from satellite/drone images."
+];
+
+const gamesProblems = [
+  "Gamified Learning Platforms – Interactive STEM learning with AR/VR.",
+  "AI-Powered Career Guidance – Personalized paths for students."
+];
+
+const healthProblems = [
+  "Connected Health Devices – IoT/wearables for chronic care.",
+  "Mental Health Assistants – Chatbots & mood-tracking apps.",
+  "Telemedicine for Rural Areas – Affordable diagnostic kits + remote consults.",
+  "Mental Health Chatbot with Sentiment Analysis.",
+  "Remote Patient Monitoring – IoT for continuous patient data.",
+  "Telemedicine App for Rural Health Centers."
+];
+
+const heritageProblems = [
+  "Music Composition with AI.",
+  "Digital Museum Guide App.",
+  "Multilingual Translation Tool for Tourists.",
+  "Virtual Tour of Heritage Sites (360°).",
+  "Gamified Culture Learning App.",
+  "Smart Heritage Tourism Planner."
+];
+
+const agricultureProblems = [
+  "Pest & Disease Alert System – Upload crop images for diagnosis.",
+  "Smart Farming with IoT – Automated irrigation/fertilization.",
+  "Rural E-commerce Platforms – Farmers connected directly to buyers.",
+  "Crop Yield Prediction – AI/ML with weather & satellite data.",
+  "Food Donation & Waste Reduction App.",
+  "AI Crop Disease Detection – Computer vision based.",
+  "IoT-based Smart Irrigation System."
+];
+
+const transportProblems = [
+  "Predictive Analytics for Traffic – Forecasting with IoT + AI.",
+  "Smart Public Transport Scheduling with real-time occupancy.",
+  "Smart Parking System with Live Updates.",
+  "Smart Bus/Train Tracking App.",
+  "Carpooling & Ride-Sharing Platform.",
+  "Parking Finder App.",
+  "Crowdsourced Road Condition Reporter."
+];
+
+const roboticsProblems = [
+  "Drone-based Traffic Monitoring Systems.",
+  "Drone-assisted Rescue Management.",
+  "AI Sign Language Interpreter.",
+  "Voice-based Navigation for Public Places."
+];
+
+const fitnessProblems = [
+  "Diet & Nutrition Planner – Personalized diet generator.",
+  "Community Sports Booking App – Find & book local courts/grounds.",
+  "Smart Sports Event Management System – Registrations, scheduling & live updates."
+];
 
 function selectEvent(eventType) {
     // Clear previous selections
