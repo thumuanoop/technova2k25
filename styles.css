@@ -66,7 +66,7 @@
 .problem-box h3 {
   font-size: 20px;
   font-weight: bold;
-  color:  var(--accent-foreground) !important;            /* heading in yellow */
+  color:  #1a73e8;            /* heading in yellow */
   margin-bottom: 12px;
 }
 
@@ -109,7 +109,7 @@
   right: 15px;
   font-size: 28px;
   cursor: pointer;
-  color: #fff;
+  color: #1558b0;
 }
 
 
