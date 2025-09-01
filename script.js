@@ -300,44 +300,51 @@ const themeProblems = {
 
 function initializeThemeCards() {
     const themeCards = document.querySelectorAll('.theme-card');
+    const overlay = document.getElementById('problem-overlay');
+    const overlayTitle = document.getElementById('overlay-title');
+    const overlayContent = document.getElementById('overlay-content');
+    const closeOverlay = document.getElementById('close-overlay');
 
     themeCards.forEach(card => {
         card.addEventListener('click', () => {
-            const theme = card.dataset.theme;
+            const theme = card.getAttribute('data-theme');
             const problems = themeProblems[theme];
 
-            if (problems) {
-                const problemBoxesContainer = document.getElementById('problemBoxes');
-                problemBoxesContainer.innerHTML = "";
+            // Set theme title
+            overlayTitle.textContent = theme;
 
-                problems.forEach(problem => {
-                    const box = document.createElement('div');
-                    box.className = "problem-box";
-                    box.innerHTML = `
-                        <h3>${problem.question}</h3>
-                        <p>${problem.description}</p>
-                    `;
-                    problemBoxesContainer.appendChild(box);
-                });
+            // Clear old content
+            overlayContent.innerHTML = '';
 
-                // Show overlay
-                document.getElementById('problemOverlay').style.display = "flex";
-            }
+            // Add rectangular boxes for each problem
+            problems.forEach(problem => {
+                const box = document.createElement('div');
+                box.className = 'problem-box';
+                box.innerHTML = `
+                    <h3>${problem.question}</h3>
+                    <p>${problem.description}</p>
+                `;
+                overlayContent.appendChild(box);
+            });
+
+            // Show overlay
+            overlay.classList.add('active');
         });
     });
 
     // Close overlay
-    document.getElementById('closeOverlay').addEventListener('click', () => {
-        document.getElementById('problemOverlay').style.display = "none";
+    closeOverlay.addEventListener('click', () => {
+        overlay.classList.remove('active');
     });
 
-    // Close when clicking outside
-    document.getElementById('problemOverlay').addEventListener('click', (e) => {
-        if (e.target.id === "problemOverlay") {
-            document.getElementById('problemOverlay').style.display = "none";
+    // Click outside overlay to close
+    overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) {
+            overlay.classList.remove('active');
         }
     });
 }
+
 
 
 // Toggle mobile menu
