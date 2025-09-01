@@ -72,6 +72,17 @@ function showMain() {
     document.getElementById('main-page').classList.remove('hidden');
     window.scrollTo(0, 0);
 }
+// Function to open modal with theme content
+function openThemeModal(title, description) {
+  document.getElementById("theme-modal-title").innerText = title;
+  document.getElementById("theme-modal-description").innerText = description;
+  document.getElementById("theme-modal").classList.remove("hidden");
+}
+
+// Function to close modal
+function closeThemeModal() {
+  document.getElementById("theme-modal").classList.add("hidden");
+}
 
 function selectEvent(eventType) {
     // Clear previous selections
