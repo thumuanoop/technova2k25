@@ -304,6 +304,25 @@ body {
     height: 12rem;
     background: hsl(214, 100%, 27%, 0.2);
 }
+#overlay-content {
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;   /* 👈 horizontal scroll */
+  overflow-y: hidden; /* no vertical scroll */
+  gap: 16px;          /* space between boxes */
+  padding: 10px;
+  scroll-snap-type: x mandatory; /* snap effect for each box */
+  -webkit-overflow-scrolling: touch; /* smooth on mobile */
+}
+
+.problem-box {
+  flex: 0 0 90%; /* 👈 each box takes ~90% of screen width */
+  max-width: 90%;
+  background: white;
+  border-radius: 12px;
+  padding: 16px;
+  scroll-snap-align: start;
+}
 
 .hero-content {
     position: relative;
