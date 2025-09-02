@@ -435,15 +435,7 @@ function redirectToForm() {
         window.open(formUrls[selectedEvent], '_blank');
     }
 }
-function showProblemStatements(theme) {
-  document.getElementById("problem-overlay").style.display = "flex";
-  document.body.style.overflow = "hidden"; // ✅ stop background scroll
-}
 
-document.querySelector(".close-btn").addEventListener("click", () => {
-  document.getElementById("problem-overlay").style.display = "none";
-  document.body.style.overflow = "auto"; // ✅ re-enable scroll
-});
 
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', () => {
