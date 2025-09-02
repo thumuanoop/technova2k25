@@ -34,6 +34,37 @@
         </nav>
     </header>
 
+        <header class="header">
+    <nav class="nav container">
+        <div class="logo">
+            <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect width="16" height="10" x="2" y="3" rx="2" ry="2"/>
+                <path d="m7 11 5-5 5 5"/>
+                <path d="m7 17 5-5 5 5"/>
+            </svg>
+            <h1>TechNova <span class="accent">2025</span></h1>
+        </div>
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+        <div class="nav-links">
+            <button onclick="showMain(); scrollToSection('schedule')">Schedule</button>
+            <button onclick="showMain(); scrollToSection('register')">Register</button>
+        </div>
+    </nav>
+
+    <!-- Quotation Section -->
+    <div class="quotation-bar">
+        <marquee behavior="scroll" direction="left" scrollamount="7">
+            🚀 "Innovation distinguishes between a leader and a follower" – Be part of TechNova 2025! 🌟 
+            | 💡 "Code the Future, Shape the World!" 
+            | 🌍 "Dream. Design. Disrupt. That’s TechNova 2025." 
+            | ⚡ "Where creativity meets technology."
+        </marquee>
+    </div>
+</header>
+
+
     <!-- Main Page -->
     <div id="main-page">
         <!-- Hero Section -->
