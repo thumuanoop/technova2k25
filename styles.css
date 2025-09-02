@@ -21,19 +21,55 @@
 }
 /* Fullscreen overlay */
 #problem-overlay {
-  position: fixed;  /* stays fixed on screen */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.95);
-  display: none;   /* hidden by default */
-  flex-direction: column; /* stack content vertically */
-  justify-content: flex-start; /* start from top */
+  display: none;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
   padding: 40px 20px;
   z-index: 2000;
-  overflow-y: auto; /* ✅ overlay itself scrolls */
+  overflow-y: auto; /* Overlay scrolls vertically */
+  max-height: 100vh; /* Ensure it fits within viewport */
+}
+
+#overlay-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
+  padding: 10px;
+  width: 100%;
+  max-width: 1000px;
+  /* Remove max-height and overflow to let #problem-overlay handle scrolling */
+}
+
+/* Mobile view */
+@media (max-width: 768px) {
+  #overlay-content {
+    display: flex;
+    flex-direction: column; /* Stack problem boxes vertically */
+    overflow: visible; /* Remove horizontal scrolling */
+    gap: 16px;
+    padding: 10px;
+  }
+
+  .problem-box {
+    flex: none; /* Remove flex sizing for mobile */
+    max-width: 100%; /* Full width for mobile */
+  }
+}
+
+/* Scrollbar styling for overlay */
+#problem-overlay::-webkit-scrollbar {
+  width: 8px;
+}
+#problem-overlay::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 4px;
 }
 
 #problem-cards-container {
@@ -319,7 +355,58 @@ body {
     border-radius: 50%;
     filter: blur(80px);
 }
+/* Fullscreen overlay */
+#problem-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.95);
+  display: none;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 40px 20px;
+  z-index: 2000;
+  overflow-y: auto; /* Overlay scrolls vertically */
+  max-height: 100vh; /* Ensure it fits within viewport */
+}
 
+#overlay-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
+  padding: 10px;
+  width: 100%;
+  max-width: 1000px;
+  /* Remove max-height and overflow to let #problem-overlay handle scrolling */
+}
+
+/* Mobile view */
+@media (max-width: 768px) {
+  #overlay-content {
+    display: flex;
+    flex-direction: column; /* Stack problem boxes vertically */
+    overflow: visible; /* Remove horizontal scrolling */
+    gap: 16px;
+    padding: 10px;
+  }
+
+  .problem-box {
+    flex: none; /* Remove flex sizing for mobile */
+    max-width: 100%; /* Full width for mobile */
+  }
+}
+
+/* Scrollbar styling for overlay */
+#problem-overlay::-webkit-scrollbar {
+  width: 8px;
+}
+#problem-overlay::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 4px;
+}
 .hero-bg::before {
     top: 25%;
     left: 25%;
