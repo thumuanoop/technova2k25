@@ -521,11 +521,10 @@ body {
 
 /* Sponsors Section */
 .sponsors-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 1rem;
-    align-items: center;
-    justify-items: center;
+ display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
 }
 
 @media (min-width: 576px) {
@@ -547,6 +546,9 @@ body {
     transition: transform 0.3s, box-shadow 0.3s;
     min-height: 140px;
     text-align: center;
+    flex: 0 1 200px;
+  max-width: 220px;
+  text-align: center;
 }
 
 .sponsor-card img {
