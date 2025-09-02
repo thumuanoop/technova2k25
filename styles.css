@@ -58,6 +58,18 @@
   -webkit-overflow-scrolling: touch;
 }
 
+.quotation-bar {
+    background: linear-gradient(90deg, #111, #222);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 8px 0;
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #333;
+    letter-spacing: 1px;
+}
+
+
 /* Problem boxes inside overlay */
 .problem-box {
   background: #2b2b2b;       /* dark background */
