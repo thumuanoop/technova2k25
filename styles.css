@@ -19,6 +19,7 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 /* Fullscreen overlay */
 #problem-overlay {
   position: fixed;
@@ -33,43 +34,8 @@
   align-items: center;
   padding: 40px 20px;
   z-index: 2000;
-  overflow-y: auto; /* Overlay scrolls vertically */
-  max-height: 100vh; /* Ensure it fits within viewport */
-}
-
-#overlay-content {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 16px;
-  padding: 10px;
-  width: 100%;
-  max-width: 1000px;
-  /* Remove max-height and overflow to let #problem-overlay handle scrolling */
-}
-
-/* Mobile view */
-@media (max-width: 768px) {
-  #overlay-content {
-    display: flex;
-    flex-direction: column; /* Stack problem boxes vertically */
-    overflow: visible; /* Remove horizontal scrolling */
-    gap: 16px;
-    padding: 10px;
-  }
-
-  .problem-box {
-    flex: none; /* Remove flex sizing for mobile */
-    max-width: 100%; /* Full width for mobile */
-  }
-}
-
-/* Scrollbar styling for overlay */
-#problem-overlay::-webkit-scrollbar {
-  width: 8px;
-}
-#problem-overlay::-webkit-scrollbar-thumb {
-  background: #555;
-  border-radius: 4px;
+  overflow-y: auto;
+  max-height: 100vh;
 }
 
 #problem-cards-container {
@@ -81,7 +47,6 @@
   width: 100%;
 }
 
-
 #problem-overlay::-webkit-scrollbar {
   width: 8px;
 }
@@ -91,26 +56,23 @@
 }
 
 #close-overlay {
-  position: sticky; /* 👈 stays visible at top */
+  position: sticky;
   top: 0;
   z-index: 2100;
   margin-bottom: 20px;
 }
 
 #problem-overlay.active {
-  display: flex; /* shown when JS adds "active" */
+  display: flex;
 }
 
-
 #overlay-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    max-width: 1000px;
-    width: 100%;
-     max-height: calc(100vh - 100px); /* leaves space for button */
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
+  padding: 10px;
+  width: 100%;
+  max-width: 1000px;
 }
 
 .quotation-bar {
@@ -124,14 +86,12 @@
     letter-spacing: 1px;
 }
 
-
-/* Problem boxes inside overlay */
 .problem-box {
-  background: #2b2b2b;       /* dark background */
-  border: 1px solid #444;
-  padding: 20px;
-  margin-bottom: 20px;
+  background: #1558b0;
+  color: white;
   border-radius: 12px;
+  padding: 16px;
+  border: 1px solid #444;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -144,32 +104,29 @@
 .problem-box h3 {
   font-size: 20px;
   font-weight: bold;
-  color:  var(--accent-foreground) !important;
-  margin-bottom: 12px;
+  color: var(--accent-foreground);
+  margin-bottom: 10px;
 }
 
 .problem-box p {
   font-size: 15px;
   line-height: 1.6;
-  color: #ddd;               /* description in light grey */
+  color: #f0f0f0;
 }
 
-
-/* Overlay background */
 .overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.85);
+  background: rgba(0, 0, 0, 0.85);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 999;
 }
 
-/* Overlay content */
 .overlay-content {
   background: #1a1a1a;
   padding: 20px;
@@ -178,18 +135,9 @@
   max-height: 80%;
   overflow-y: auto;
   position: relative;
-     max-height: calc(100vh - 100px); /* leaves space for button */
-  overflow-y: auto;
+  max-height: calc(100vh - 100px);
   -webkit-overflow-scrolling: touch;
 }
-
-/* Close button */
-.close-btn {
-  position: absolute;
-top: 10px; right: 15px; font-size: 28px; cursor: pointer; color: #fff;
-}
-
-
 
 body {
     font-family: 'Inter', system-ui, sans-serif;
@@ -205,7 +153,6 @@ body {
     padding: 0 1rem;
 }
 
-/* Header */
 .header {
     border-bottom: 1px solid var(--border);
     padding: 1rem 0;
@@ -213,7 +160,6 @@ body {
     z-index: 1000;
 }
 
-/* Navbar */
 .nav {
     display: flex;
     justify-content: space-between;
@@ -285,7 +231,6 @@ body {
     box-shadow: 0 0 15px rgba(59, 130, 246, 0.8);
 }
 
-/* Glowing Button Style */
 .btn-glow {
     display: inline-flex;
     align-items: center;
@@ -329,7 +274,6 @@ body {
     height: 200%;
 }
 
-/* Hero Section */
 .hero {
     position: relative;
     width: 100%;
@@ -355,58 +299,7 @@ body {
     border-radius: 50%;
     filter: blur(80px);
 }
-/* Fullscreen overlay */
-#problem-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.95);
-  display: none;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 40px 20px;
-  z-index: 2000;
-  overflow-y: auto; /* Overlay scrolls vertically */
-  max-height: 100vh; /* Ensure it fits within viewport */
-}
 
-#overlay-content {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 16px;
-  padding: 10px;
-  width: 100%;
-  max-width: 1000px;
-  /* Remove max-height and overflow to let #problem-overlay handle scrolling */
-}
-
-/* Mobile view */
-@media (max-width: 768px) {
-  #overlay-content {
-    display: flex;
-    flex-direction: column; /* Stack problem boxes vertically */
-    overflow: visible; /* Remove horizontal scrolling */
-    gap: 16px;
-    padding: 10px;
-  }
-
-  .problem-box {
-    flex: none; /* Remove flex sizing for mobile */
-    max-width: 100%; /* Full width for mobile */
-  }
-}
-
-/* Scrollbar styling for overlay */
-#problem-overlay::-webkit-scrollbar {
-  width: 8px;
-}
-#problem-overlay::-webkit-scrollbar-thumb {
-  background: #555;
-  border-radius: 4px;
-}
 .hero-bg::before {
     top: 25%;
     left: 25%;
@@ -421,25 +314,6 @@ body {
     width: 12rem;
     height: 12rem;
     background: hsl(214, 100%, 27%, 0.2);
-}
-#overlay-content {
-  display: flex;
-  flex-direction: row;
-  overflow-x: auto;   /* 👈 horizontal scroll */
-  overflow-y: hidden; /* no vertical scroll */
-  gap: 16px;          /* space between boxes */
-  padding: 10px;
-  scroll-snap-type: x mandatory; /* snap effect for each box */
-  -webkit-overflow-scrolling: touch; /* smooth on mobile */
-}
-
-.problem-box {
-  flex: 0 0 90%; /* 👈 each box takes ~90% of screen width */
-  max-width: 90%;
-  background: #1558b0;
-  border-radius: 12px;
-  padding: 16px;
-  scroll-snap-align: start;
 }
 
 .hero-content {
@@ -543,7 +417,6 @@ body {
     background: var(--card);
 }
 
-/* Features Grid */
 .features-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -585,7 +458,6 @@ body {
     font-size: 0.875rem;
 }
 
-/* Update the existing mobile media query */
 @media (max-width: 576px) {
     .hero {
         padding: 60px 15px;
@@ -625,12 +497,11 @@ body {
     }
 }
 
-/* Sponsors Section */
 .sponsors-grid {
- display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
 }
 
 @media (min-width: 576px) {
@@ -653,8 +524,8 @@ body {
     min-height: 140px;
     text-align: center;
     flex: 0 1 200px;
-  max-width: 220px;
-  text-align: center;
+    max-width: 220px;
+    text-align: center;
 }
 
 .sponsor-card img {
@@ -722,7 +593,6 @@ body {
     flex: 0 1 220px;
 }
 
-/* Section Styles */
 .section {
     padding: 5rem 0;
 }
@@ -749,7 +619,6 @@ body {
     margin: 0 auto;
 }
 
-/* Timeline */
 .timeline {
     max-width: 64rem;
     margin: 0 auto;
@@ -839,7 +708,6 @@ body {
     margin-right: 0.5rem;
 }
 
-/* Registration Section */
 .registration-container {
     max-width: 48rem;
     margin: 0 auto;
@@ -970,7 +838,6 @@ body {
     color: var(--accent-foreground);
 }
 
-/* Pricing Display */
 .pricing-display {
     background: var(--card);
     border: 1px solid var(--border);
@@ -992,7 +859,6 @@ body {
     margin-bottom: 2rem;
 }
 
-/* Venue Section */
 .venue-grid {
     display: grid;
     gap: 2rem;
@@ -1053,7 +919,6 @@ body {
     border-radius: var(--radius);
 }
 
-/* Themes Grid */
 .themes-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -1092,7 +957,6 @@ body {
     color: var(--muted-foreground);
 }
 
-/* Theme Overlay */
 .theme-overlay {
     position: absolute;
     top: 0;
@@ -1128,7 +992,6 @@ body {
     margin-bottom: 0.5rem;
 }
 
-/* Theme Problem Boxes */
 .theme-problem-boxes {
     display: grid;
     grid-template-columns: 1fr;
@@ -1150,9 +1013,6 @@ body {
     }
 }
 
-
-
-/* Responsive Theme Overlay and Problem Boxes */
 @media (max-width: 768px) {
     .theme-overlay {
         position: relative;
@@ -1170,9 +1030,21 @@ body {
     .theme-problem-boxes {
         grid-template-columns: 1fr;
     }
+
+    #overlay-content {
+        display: flex;
+        flex-direction: column;
+        overflow: visible;
+        gap: 16px;
+        padding: 10px;
+    }
+
+    .problem-box {
+        flex: none;
+        max-width: 100%;
+    }
 }
 
-/* Footer */
 .footer {
     border-top: 1px solid var(--border);
     padding: 3rem 0;
@@ -1245,12 +1117,10 @@ body {
     color: var(--muted-foreground);
 }
 
-/* Hide/Show sections */
 .hidden {
     display: none;
 }
 
-/* Scrollbar */
 ::-webkit-scrollbar {
     width: 8px;
 }
@@ -1268,7 +1138,6 @@ body {
     background: var(--accent);
 }
 
-/* Responsive Fixes */
 @media (max-width: 992px) {
     .hero-content {
         flex-direction: column;
@@ -1305,12 +1174,10 @@ body {
     }
 }
 
-/* Hide menu-toggle on desktop */
 .menu-toggle {
     display: none;
 }
 
-/* Ensure menu-toggle appears only on mobile */
 @media (max-width: 768px) {
     .menu-toggle {
         display: block;
@@ -1368,47 +1235,4 @@ body {
         order: 999;
         display: flex !important;
     }
-}
-/* ✅ Default (desktop / website view) */
-#overlay-content {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 16px;
-  padding: 10px;
-}
-
-.problem-box {
-  background: #1558b0;   /* Blue background */
-  color: white;
-  border-radius: 12px;
-  padding: 16px;
-}
-
-.problem-box h3 {
-  color: white;
-  margin-bottom: 10px;
-}
-
-.problem-box p {
-  color: #f0f0f0;
-}
-
-/* ✅ Mobile view (horizontal scroll) */
-@media (max-width: 768px) {
-  #overlay-content {
-    display: flex;
-    flex-direction: row;
-    overflow-x: auto;
-    overflow-y: hidden;
-    gap: 16px;
-    padding: 10px;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  .problem-box {
-    flex: 0 0 90%; /* one box takes 90% width */
-    max-width: 90%;
-    scroll-snap-align: start;
-  }
 }
