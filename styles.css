@@ -46,6 +46,13 @@
 }
 
 
+#problem-overlay::-webkit-scrollbar {
+  width: 8px;
+}
+#problem-overlay::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 4px;
+}
 
 #close-overlay {
   position: sticky; /* 👈 stays visible at top */
