@@ -28,7 +28,6 @@ const formUrls = {
 // State variables
 let selectedEvent = null;
 let selectedTeamSize = null;
-let activeThemeCard = null;
 
 // Problem statements and descriptions for each theme
 const themeProblems = {
@@ -188,7 +187,7 @@ const themeProblems = {
             description: "Create an AI-powered tool to compose music inspired by cultural heritage, preserving traditional sounds."
         },
         {
-            question: " 2.Digital Museum Guide App",
+            question: "2.Digital Museum Guide App",
             description: "Develop a mobile app offering interactive guides and audio tours for museums and cultural sites."
         },
         {
@@ -298,55 +297,6 @@ const themeProblems = {
     ]
 };
 
-function initializeThemeCards() {
-    const themeCards = document.querySelectorAll('.theme-card');
-    const overlay = document.getElementById('problem-overlay');
-    const overlayTitle = document.getElementById('overlay-title');
-    const overlayContent = document.getElementById('overlay-content');
-    const closeOverlay = document.getElementById('close-overlay');
-
-    themeCards.forEach(card => {
-        card.addEventListener('click', () => {
-            const theme = card.getAttribute('data-theme');
-            const problems = themeProblems[theme];
-
-            // Set theme title
-            overlayTitle.textContent = theme;
-
-            // Clear old content
-            overlayContent.innerHTML = '';
-
-            // Add rectangular boxes for each problem
-            problems.forEach(problem => {
-                const box = document.createElement('div');
-                box.className = 'problem-box';
-                box.innerHTML = `
-    <h3 class="problem-heading">${problem.question}</h3>
-    <p class="problem-description">${problem.description}</p>
-`;
-                overlayContent.appendChild(box);
-            });
-
-            // Show overlay
-            overlay.classList.add('active');
-        });
-    });
-
-    // Close overlay
-    closeOverlay.addEventListener('click', () => {
-        overlay.classList.remove('active');
-    });
-
-    // Click outside overlay to close
-    overlay.addEventListener('click', (e) => {
-        if (e.target === overlay) {
-            overlay.classList.remove('active');
-        }
-    });
-}
-
-
-
 // Toggle mobile menu
 function toggleMenu() {
     const navLinks = document.querySelector('.nav-links');
@@ -358,6 +308,7 @@ function showMain() {
     document.getElementById('main-page').classList.remove('hidden');
     document.getElementById('themes-page').classList.add('hidden');
     document.querySelector('.nav-links').classList.remove('active');
+    document.body.style.overflow = 'auto';
 }
 
 // Show themes page
@@ -365,6 +316,7 @@ function showThemes() {
     document.getElementById('main-page').classList.add('hidden');
     document.getElementById('themes-page').classList.remove('hidden');
     document.querySelector('.nav-links').classList.remove('active');
+    document.body.style.overflow = 'auto';
 }
 
 // Scroll to section
@@ -375,6 +327,56 @@ function scrollToSection(sectionId) {
     }
 }
 
+// Show problem statements overlay
+function showProblemStatements(theme) {
+    const overlay = document.getElementById('problem-overlay');
+    const overlayTitle = document.getElementById('overlay-title');
+    const overlayContent = document.getElementById('overlay-content');
+
+    overlayTitle.textContent = theme;
+    overlayContent.innerHTML = '';
+
+    const problems = themeProblems[theme];
+    problems.forEach(problem => {
+        const box = document.createElement('div');
+        box.className = 'problem-box';
+        box.innerHTML = `
+            <h3 class="problem-heading">${problem.question}</h3>
+            <p class="problem-description">${problem.description}</p>
+        `;
+        overlayContent.appendChild(box);
+    });
+
+    overlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+// Initialize theme cards
+function initializeThemeCards() {
+    const themeCards = document.querySelectorAll('.theme-card');
+    const overlay = document.getElementById('problem-overlay');
+    const closeOverlay = document.getElementById('close-overlay');
+
+    themeCards.forEach(card => {
+        card.addEventListener('click', () => {
+            const theme = card.getAttribute('data-theme');
+            showProblemStatements(theme);
+        });
+    });
+
+    closeOverlay.addEventListener('click', () => {
+        overlay.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    });
+
+    overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) {
+            overlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+    });
+}
+
 // Select event type
 function selectEvent(eventType) {
     selectedEvent = eventType;
@@ -383,7 +385,6 @@ function selectEvent(eventType) {
     });
     document.getElementById(`event-${eventType}`).classList.add('selected');
 
-    // Update team size options
     updateTeamOptions();
     updatePricing();
 }
@@ -436,17 +437,7 @@ function redirectToForm() {
     }
 }
 
-
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', () => {
     initializeThemeCards();
-});
-function showProblemStatements(theme) {
-  document.getElementById("problem-overlay").style.display = "flex";
-  document.body.style.overflow = "hidden"; // stop background scroll
-}
-
-document.querySelector(".close-btn").addEventListener("click", () => {
-  document.getElementById("problem-overlay").style.display = "none";
-  document.body.style.overflow = "auto"; // re-enable background scroll
 });
