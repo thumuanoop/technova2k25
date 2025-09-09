@@ -73,6 +73,14 @@ const themeProblems = {
         {
             question: "4.Smart Street Light Controller",
             description: "Design a system that automatically turns street lights on/off or dims them based on motion detection, saving energy in public spaces."
+        },
+        {
+            question: "Hybrid Regenerative Braking System for EVs",
+            description: "Develop a dual-mode regenerative braking system that combines electrical energy recovery with mechanical energy storage (flywheel) to improve EV efficiency."
+        },
+        {
+            question: "Smart Cooling System for Electric Vehicles",
+            description: "Design a compact, efficient cooling system for EV batteries using low-cost materials or heat pipe simulation."
         }
     ],
     'Blockchain & Cybersecurity': [
@@ -179,6 +187,14 @@ const themeProblems = {
         {
             question: "6.Telemedicine App for Rural Health Centers",
             description: "Develop a telemedicine app to connect rural health centers with specialists for remote consultations."
+        },
+        {
+            question: "Low-Cost 3D Printed Prosthetic Arm",
+            description: "Develop a lightweight, affordable prosthetic design using CAD tools and simulate stress analysis."
+        },
+        {
+            question: "Exoskeleton for Industrial Workers",
+            description: "Design a wearable exoskeleton support system to assist workers in lifting and carrying heavy objects with minimal strain."
         }
     ],
     'Heritage & Culture': [
@@ -235,6 +251,10 @@ const themeProblems = {
         {
             question: "7.IoT-based Smart Irrigation System",
             description: "Create an IoT solution for smart irrigation, adjusting water usage based on soil and weather data."
+        },
+        {
+            question: "Portable Cold Storage Unit for Rural Farmers",
+            description: "Develop a low-cost, solar-powered portable refrigeration unit capable of 3–4 hours operation without grid supply."
         }
     ],
     'Transportation & Logistics': [
@@ -275,6 +295,14 @@ const themeProblems = {
         {
             question: "4.Agricultural Drones for Crop Monitoring",
             description: "Build drones with imaging technology to monitor crop health and optimize farming practices."
+        },
+        {
+            question: "Autonomous Drone for Industrial Inspection",
+            description: "Design a drone with a mechanical mount capable of carrying inspection sensors (camera/thermal) and simulate path planning + load handling. Outcome: CAD design + flight simulation + sensor integration."
+        },
+        {
+            question: "Smart Material Handling Robot for Warehouses",
+            description: "Design a robotic arm or AGV capable of lifting and transporting packages while optimizing path and energy. Outcome: CAD model + kinematic simulation + (optional Arduino/ROS prototype)."
         }
     ],
     'Fitness & Sports': [
@@ -293,6 +321,32 @@ const themeProblems = {
         {
             question: "4.Injury Prevention System",
             description: "Develop a wearable device and app to monitor biomechanics and prevent sports injuries."
+        }
+    ],
+    'Mechanical & Energy Systems': [
+        {
+            question: "Energy-Efficient HVAC Duct Design",
+            description: "Optimize airflow in building ducts to reduce energy consumption by at least 10%, supported by CFD modeling."
+        },
+        {
+            question: "Automated Fault Detection in CNC Machines",
+            description: "Build a monitoring system that detects tool wear or machine vibration anomalies using sensors."
+        },
+        {
+            question: "Vibration Control in High-Speed Machines",
+            description: "Propose a passive/active vibration damping system using tuned mass dampers or smart materials. Outcome: ANSYS/Matlab simulation + scaled prototype."
+        },
+        {
+            question: "Eco-Friendly Low-Cost 3D Printing Filament Extruder",
+            description: "Build a system to recycle PET/PLA waste into usable 3D printing filament. Outcome: mechanical design + extrusion/cooling + thermal efficiency study."
+        },
+        {
+            question: "Smart HVAC System for Energy Savings",
+            description: "Develop a mechanical design + IoT integration for HVAC ducts/dampers that adjust airflow based on occupancy/temperature sensors. Outcome: CFD simulation + IoT mockup."
+        },
+        {
+            question: "Compact Hybrid Energy Harvesting Bicycle",
+            description: "Design a bicycle that converts pedaling into both electrical energy (battery) and compressed air storage. Outcome: mechanical model + prototype demo for device charging."
         }
     ]
 };
@@ -404,8 +458,9 @@ function updateTeamOptions() {
 }
 
 // Select team size
-function selectTeamSize(size) {
+function selectTeam(size) {
     if (selectedEvent === 'coding' && size > 2) return;
+
     selectedTeamSize = size;
     document.querySelectorAll('.team-option').forEach(opt => {
         opt.classList.remove('selected');
@@ -416,25 +471,22 @@ function selectTeamSize(size) {
 
 // Update pricing display
 function updatePricing() {
-    const pricingDisplay = document.getElementById('pricing-display');
-    const priceAmount = document.getElementById('price-amount');
-    const priceDetails = document.getElementById('price-details');
-
+    const priceDisplay = document.getElementById('price-display');
     if (selectedEvent && selectedTeamSize) {
         const price = pricing[selectedEvent][selectedTeamSize];
-        priceAmount.textContent = `₹${price}`;
-        priceDetails.textContent = `Registration for ${selectedTeamSize} member${selectedTeamSize > 1 ? 's' : ''} in ${selectedEvent.charAt(0).toUpperCase() + selectedEvent.slice(1)}`;
-        pricingDisplay.classList.remove('hidden');
+        priceDisplay.textContent = `₹${price}`;
     } else {
-        pricingDisplay.classList.add('hidden');
+        priceDisplay.textContent = '₹0';
     }
 }
 
-// Redirect to Google Form
-function redirectToForm() {
-    if (selectedEvent) {
-        window.open(formUrls[selectedEvent], '_blank');
+// Handle registration
+function handleRegister() {
+    if (!selectedEvent || !selectedTeamSize) {
+        alert('Please select an event type and team size.');
+        return;
     }
+    window.open(formUrls[selectedEvent], '_blank');
 }
 
 // Initialize on page load
