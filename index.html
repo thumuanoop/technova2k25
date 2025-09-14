@@ -12,8 +12,8 @@
     <style>
         /* Boom Animation for Registration Closed Message */
         .registration-closed-message {
-            position: fixed;
-            top: 180px; /* Adjusted to move the message down */
+            position: absolute;
+            top: 50px;
             right: 20px;
             padding: 12px 24px;
             background: radial-gradient(circle, rgba(255, 77, 77, 0.9) 0%, rgba(200, 0, 0, 0.7) 70%);
@@ -50,12 +50,13 @@
                 opacity: 1;
             }
         }
+
+        .hero {
+            position: relative; /* Added to provide positioning context for absolute positioning */
+        }
     </style>
 </head>
 <body>
-    <!-- Registration Closed Message -->
-    <div class="registration-closed-message">Registrations are Closed</div>
-
     <!-- Header (Unified across pages) -->
     <header class="header">
         <nav class="nav container">
@@ -92,6 +93,8 @@
         <!-- Hero Section -->
         <section class="hero">
             <div class="hero-bg"></div>
+            <!-- Registration Closed Message -->
+            <div class="registration-closed-message">Registrations are Closed</div>
             <div class="container">
                 <div class="hero-content">
                     <div class="hero-text">
