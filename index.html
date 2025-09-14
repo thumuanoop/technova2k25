@@ -12,20 +12,21 @@
     <style>
         /* Boom Animation for Registration Closed Message */
         .registration-closed-message {
-            display: inline-block;
-            font-size: 1rem;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background: rgba(255, 77, 77, 0.9);
+            color: white;
+            font-size: 1.2rem;
             font-weight: 600;
-            color: #ff4d4d;
             text-transform: uppercase;
-            text-align: center;
-            padding: 0.75rem 1.5rem;
             border-radius: 8px;
-            background: rgba(255, 77, 77, 0.1);
-            border: 2px solid #ff4d4d;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
             animation: boom 0.5s ease-in-out;
-            text-shadow: 0 0 5px rgba(255, 77, 77, 0.5);
+            text-align: center;
             cursor: default;
-            line-height: normal;
         }
 
         @keyframes boom {
@@ -42,30 +43,12 @@
                 opacity: 1;
             }
         }
-
-        /* Adjust for event and team options */
-        .event-option .registration-closed-message,
-        .team-option .registration-closed-message {
-            width: 100%;
-            box-sizing: border-box;
-            margin: 0;
-            padding: 1rem;
-        }
-
-        /* Style for disabled register link in footer */
-        .disabled-link {
-            color: #666;
-            cursor: default;
-            pointer-events: none;
-        }
-
-        /* Ensure hero-buttons alignment */
-        .hero-buttons .registration-closed-message {
-            margin-right: 1rem;
-        }
     </style>
 </head>
 <body>
+    <!-- Registration Closed Message -->
+    <div class="registration-closed-message">Registrations are Closed</div>
+
     <!-- Header (Unified across pages) -->
     <header class="header">
         <nav class="nav container">
@@ -82,7 +65,7 @@
             </div>
             <div class="nav-links">
                 <button onclick="showMain(); scrollToSection('schedule')">Schedule</button>
-                <span class="registration-closed-message">Registrations are Closed</span>
+                <button onclick="showMain(); scrollToSection('register')">Register</button>
             </div>
         </nav>
 
@@ -115,7 +98,10 @@
                             Department of Computer Science and Data Science brings you TechNova a 2 day adrenaline-charged celebration of tech brilliance, bold ideas, and boundary-breaking creativity. Whether you're a code warrior, a design thinker, or a curious innovator, this is your playground.
                         </p>
                         <div class="hero-buttons">
-                            <span class="registration-closed-message">Registrations are Closed</span>
+                            <button class="btn btn-glow" onclick="scrollToSection('register')">
+                                <i class="fas fa-rocket" style="margin-right: 0.5rem;"></i>
+                                Register Now
+                            </button>
                             <button class="btn btn-secondary" onclick="showThemes()">
                                 <i class="fas fa-lightbulb" style="margin-right: 0.5rem;"></i>
                                 Problem Statements
@@ -300,14 +286,20 @@
                     <div class="event-selector">
                         <h3>What do you want to participate in?</h3>
                         <div class="event-options">
-                            <div class="event-option" id="event-hackathon">
-                                <span class="registration-closed-message">Registrations are Closed</span>
+                            <div class="event-option" onclick="selectEvent('hackathon')" id="event-hackathon">
+                                <div class="theme-icon"><i class="fas fa-code" style="font-size: 2rem;"></i></div>
+                                <h4>Hackathon Only</h4>
+                                <p>12-hour Prototype Building</p>
                             </div>
-                            <div class="event-option" id="event-coding">
-                                <span class="registration-closed-message">Registrations are Closed</span>
+                            <div class="event-option" onclick="selectEvent('coding')" id="event-coding">
+                                <div class="theme-icon"><i class="fas fa-laptop" style="font-size: 2rem;"></i></div>
+                                <h4>Coding Quest</h4>
+                                <p>4-hour coding challenge</p>
                             </div>
-                            <div class="event-option" id="event-combo">
-                                <span class="registration-closed-message">Registrations are Closed</span>
+                            <div class="event-option" onclick="selectEvent('combo')" id="event-combo">
+                                <div class="theme-icon"><i class="fas fa-trophy" style="font-size: 2rem;"></i></div>
+                                <h4>Combo Package</h4>
+                                <p>Hackathon + Coding Quest</p>
                             </div>
                         </div>
                     </div>
@@ -316,17 +308,25 @@
                     <div class="team-selector">
                         <h3>Select Team Size</h3>
                         <div class="team-options">
-                            <div class="team-option" id="team-1">
-                                <span class="registration-closed-message">Registrations are Closed</span>
+                            <div class="team-option" onclick="selectTeamSize(1)" id="team-1">
+                                <div class="team-icon"><i class="fas fa-user" style="font-size: 2rem;"></i></div>
+                                <div class="team-label">1 Member</div>
+                                <div class="team-subtitle">Solo</div>
                             </div>
-                            <div class="team-option" id="team-2">
-                                <span class="registration-closed-message">Registrations are Closed</span>
+                            <div class="team-option" onclick="selectTeamSize(2)" id="team-2">
+                                <div class="team-icon"><i class="fas fa-user-friends" style="font-size: 2rem;"></i></div>
+                                <div class="team-label">2 Members</div>
+                                <div class="team-subtitle">Duo</div>
                             </div>
-                            <div class="team-option" id="team-3">
-                                <span class="registration-closed-message">Registrations are Closed</span>
+                            <div class="team-option" onclick="selectTeamSize(3)" id="team-3">
+                                <div class="team-icon"><i class="fas fa-users" style="font-size: 2rem;"></i></div>
+                                <div class="team-label">3 Members</div>
+                                <div class="team-subtitle">Trio</div>
                             </div>
-                            <div class="team-option" id="team-4">
-                                <span class="registration-closed-message">Registrations are Closed</span>
+                            <div class="team-option" onclick="selectTeamSize(4)" id="team-4">
+                                <div class="team-icon"><i class="fas fa-user-friends" style="font-size: 2rem;"></i></div>
+                                <div class="team-label">4 Members</div>
+                                <div class="team-subtitle">Squad</div>
                             </div>
                         </div>
                     </div>
@@ -335,7 +335,10 @@
                     <div id="pricing-display" class="pricing-display hidden">
                         <div class="pricing-amount" id="price-amount">₹0</div>
                         <div class="pricing-details" id="price-details"></div>
-                        <span class="registration-closed-message">Registrations are Closed</span>
+                        <button class="btn btn-glow" onclick="redirectToForm()" id="register-button">
+                            <i class="fas fa-external-link-alt" style="margin-right: 0.5rem;"></i>
+                            Complete Registration
+                        </button>
                     </div>
                 </div>
             </div>
@@ -447,7 +450,7 @@
                         <h4>Quick Links</h4>
                         <ul>
                             <li><button onclick="showMain(); setTimeout(() => scrollToSection('schedule'), 100);">Schedule</button></li>
-                            <li><span class="disabled-link">Registrations are Closed</span></li>
+                            <li><button onclick="showMain(); setTimeout(() => scrollToSection('register'), 100);">Register</button></li>
                             <li><button onclick="showMain(); setTimeout(() => scrollToSection('venue'), 100);">Venue</button></li>
                         </ul>
                     </div>
@@ -649,7 +652,7 @@
                         <h4>Quick Links</h4>
                         <ul>
                             <li><button onclick="showMain(); setTimeout(() => scrollToSection('schedule'), 100);">Schedule</button></li>
-                            <li><span class="disabled-link">Registrations are Closed</span></li>
+                            <li><button onclick="showMain(); setTimeout(() => scrollToSection('register'), 100);">Register</button></li>
                             <li><button onclick="showMain(); setTimeout(() => scrollToSection('venue'), 100);">Venue</button></li>
                         </ul>
                     </div>
